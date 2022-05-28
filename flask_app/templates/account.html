@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/all_imgs/icon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <title>INVRT - Account</title>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <div class="header flex justify-between align-center text-aliceblue">
+        <div class="nav flex justify-between">
+            <img src="{{ url_for('static', filename='/all_imgs/Invrt_Logo.jpg') }}" alt="INVRT Logo">
+            <div class="right-header flex justify-between align-center">
+                    <a href="/">Home</a>
+                <a href="/drops/1">Drop 1</a>
+                <a href="/drops/2">Drop 2</a>
+                <a href="/upcoming-drops">Upcoming Drops</a>
+                <a href="/about">About</a>
+                <div class="smaller flex">
+                    <a href="/account"><img src="{{ url_for('static', filename='/all_imgs/user_icon_purple.png') }}" alt=""></a>
+                    <a href="/cart"><img src="{{ url_for('static', filename='/all_imgs/cart2.png') }}" alt="Cart"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if not "user_id" in session %}
+    <!-- Account Options -->
+    <div class="flex container justify-around">
+        <!-- Create Account -->
+        <div class="account col-1 align-center text-center">
+            <h1>Create Account</h1>
+            <form action="/create-account" method="post">
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name">
+                <br>
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name">
+                <br>
+                <label for="email">Email:</label>
+                <input type="text" name="email">
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" name="password">
+                <br>
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" name="confirm_password">
+                <br>
+                <input type="submit" value="Create Account">
+            </form>
+            <div class="messages">
+                {% with messages = get_flashed_messages(category_filter=['create']) %}
+                    {% for message in messages %}
+                        {{message}}
+                        <br>
+                    {% endfor %}
+                {% endwith %}
+            </div>
+        </div>
+
+        <!-- Sign-In -->
+        <div class="account col-1 align-center text-center">
+            <h1>Sign-In</h1>
+            <form action="sign-in" method="post">
+                <label for="email">Email:</label>
+                <input type="text" name="email">
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" name="password">
+                <br>
+                <input type="submit" value="Sign-In">
+            </form>
+            <div class="messages">
+                {% with messages = get_flashed_messages(category_filter=['signin']) %}
+                    {% for message in messages %}
+                        {{message}}
+                    {% endfor %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        {% with messages = get_flashed_messages(category_filter=['cart']) %}
+            {% for message in messages %}
+                {{message}}
+                <br>
+            {% endfor %}
+        {% endwith %}
+    </div>
+    {% endif %}
+
+    {% if "user_id" in session %}
+    <!-- Signed In -->
+        <div class="container flex justify-around">
+            <div class="account align-center text-center">
+                <h1>Hey {{user.first_name}}!</h1>
+                <!-- <h2>Update Account Info</h2>
+                <form action="/update-account" method="post">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" name="first_name">
+                    <br>
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" name="last_name">
+                    <br>
+                    <label for="email">Email:</label>
+                    <input type="text" name="email">
+                    <br>
+                    <input type="submit" value="Update Info">
+                </form> -->
+            </div>
+            <div class="signout ">
+                <a href="/sign-out"><button>Sign-Out</button></a>
+            </div>
+        </div>
+    {% endif %}
+</body>
+</html>

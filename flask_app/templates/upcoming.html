@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/all_imgs/icon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <title>INVRT - Upcoming Drops</title>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <div class="header flex justify-between align-center text-aliceblue">
+        <div class="nav flex justify-between">
+            <img src="{{ url_for('static', filename='/all_imgs/Invrt_Logo.jpg') }}" alt="INVRT Logo">
+            <div class="right-header flex justify-between align-center">
+                <a href="/">Home</a>
+                <a href="/drops/1">Drop 1</a>
+                <a href="/drops/2">Drop 2</a>
+                <div id="highlight">
+                    <a href="/upcoming-drops">Upcoming Drops</a>
+                </div>
+                <a href="/about">About</a>
+                <div class="smaller">
+                    <a href="/account"><img src="{{ url_for('static', filename='/all_imgs/user_icon.png') }}" alt=""></a>
+                    <a href="/cart"><img src="{{ url_for('static', filename='/all_imgs/cart2.png') }}" alt="Cart"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content text-center">
+        <p>Upcoming drops/announcements will be shown here.</p>
+        <a href="https://www.instagram.com/invrtofficial/"><img src="{{ url_for('static', filename='/all_imgs/instagram.png') }}" alt="instagram"></a>
+        <a href="https://twitter.com/AkuaDrowned"><img src="{{ url_for('static', filename='/all_imgs/twitter.png') }}" alt="twitter"></a>
+    </div>
+</body>
+</html>

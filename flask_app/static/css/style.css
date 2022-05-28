@@ -1,0 +1,288 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Anton', sans-serif;
+}
+
+
+
+/* UNIVERSAL */
+.flex{
+    display: flex;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.text-aliceblue{
+    color: aliceblue;
+}
+
+.container{
+    width: 1100px;
+    margin: 200px auto 0;
+}
+
+#col-1{
+    flex: 1;
+}
+
+
+/* NAV BAR */
+.header{
+    padding: 25px 150px;
+    background-color: rgb(103, 90, 172);
+    box-shadow: 0 0 25px black;
+    font-size: 20px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    width: auto !important;
+    opacity: 90%;
+}
+
+.header img{
+    height: 32px;
+}
+
+.nav{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.right-header{
+    height: auto;
+    width: 500px;
+}
+
+.header a:hover {
+    transition: 350ms;
+    position: relative;
+    right: 2px;
+    font-size: 22px;
+}
+
+#highlight a{
+    color: rgb(56, 48, 99);
+}
+
+.smaller img{
+    height: 25px;
+}
+
+.smaller img:hover{
+    transition: 350ms;
+    height: 28px;
+    position: relative;
+    top: 1px;
+}
+
+
+
+/* Index */
+.cover img{
+    object-fit: cover;
+    width: 100%;
+    height: 150vh;
+}
+
+
+
+/* Account */
+.account{
+    font-size: 30px;
+    color: rgb(56, 48, 99);
+}
+
+.account form{
+    font-size: 25px;
+    text-align: right;
+    color: black;
+}
+
+input{
+    padding: 2px 8px;
+    font-size: 15px;
+}
+
+.signout a{
+    color: black !important;
+    font-size: 50px;
+}
+
+.signout{
+    text-align: right;
+}
+
+.messages{
+    color: black;
+    font-size: 20px;
+}
+
+
+
+/* About/Upcoming */
+.content{
+    margin: 200px auto;
+    width: 850px;
+    font-size: 25px;
+}
+
+.content img{
+    height: 40px;
+    margin: 5px 10px;
+}
+
+
+
+/* Drops */
+.clothing-display img{
+    height: 500px;
+}
+
+.clothing-display a{
+    color: black;
+}
+
+.clothing-display h2{
+    margin-bottom: 150px;
+}
+
+.clothing-display img:hover{
+    height: 525px;
+    transition: 500ms;
+}
+
+
+
+/* Products */
+.large-photo{
+    height: 600px;
+    width: 600px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+}
+
+.large-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.small-photos{
+    padding: 0 50px;
+    width: 500px;
+}
+
+.small-photos img{
+    border: solid rgb(179, 179, 179);
+    border-width: 2px;
+    height: 100px;
+}
+
+.options h1{
+    font-size: 50px;
+}
+
+.options form{
+    font-size: 25px;
+}
+
+.options input[type="submit"], .sold-button{
+    font-size: 30px;
+    color: white;
+    background-color: rgb(103, 90, 172);
+    padding: 10px 67px;
+    box-shadow: 3px 3px black;
+
+}
+
+.options input[type="submit"]:active{
+    background-color: rgb(150, 137, 216);
+    position: relative;
+    top: 3px; left: 3px;
+    box-shadow: 0 0 0;
+}
+
+.options select{
+    width: 175px;
+}
+
+.options input[type="radio"]{
+    height: 25px;
+    width: 25px;
+}
+
+.options h2{
+    font-size: 30px;
+}
+
+.message{
+    font-size: 10px;
+    color: crimson;
+}
+
+
+
+/* Cart */
+.in-cart{
+    width: 100%;
+    margin-bottom: 5px;
+    border: solid rgb(179, 179, 179);
+    border-width: 2px;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 30px;
+}
+
+.in-cart p{
+    margin-right: 20px;
+}
+
+.in-cart img{
+    margin-right: 20px;
+    height: 70px;
+    width: auto;
+}
+
+.your-cart{
+    font-size: 50px;
+}
+
+.right-cart input{
+    cursor: pointer;
+    border-width: 0;
+    background-color: white;
+}
+
+.right-cart a, .right-cart input{
+    font-size: 20px;
+    color: black;
+    text-decoration: underline;
+    margin-left: 20px;
+}
