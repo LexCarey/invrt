@@ -64,6 +64,7 @@ a{
     top: 0; left: 0; right: 0;
     width: auto !important;
     opacity: 90%;
+    z-index: 10;
 }
 
 .header img{
@@ -82,12 +83,10 @@ a{
 
 .header a:hover {
     transition: 350ms;
-    position: relative;
-    right: 2px;
-    font-size: 22px;
+    transform: scale(1.2);
 }
 
-#highlight a{
+#highlight{
     color: rgb(56, 48, 99);
 }
 
@@ -97,9 +96,7 @@ a{
 
 .smaller img:hover{
     transition: 350ms;
-    height: 28px;
-    position: relative;
-    top: 1px;
+    transform: scale(1.2);
 }
 
 
@@ -173,8 +170,8 @@ input{
     margin-bottom: 150px;
 }
 
-.clothing-display img:hover{
-    height: 525px;
+.clothing-display:hover{
+    transform: scale(1.1);
     transition: 500ms;
 }
 
