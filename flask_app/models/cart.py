@@ -1,7 +1,7 @@
 from flask_app.config.mysqlconnection import MySQLConnection, connectToMySQL
 from flask import render_template,redirect,request,session,flash
 from flask_app import app
-from flask_app.models import user, product
+from flask_app.models import product
 
 class Cart():
     def __init__(self, data):
