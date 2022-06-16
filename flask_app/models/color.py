@@ -6,6 +6,7 @@ class Color():
         self.id = data["id"]
         self.product_id = data["product_id"]
         self.color = data["color"]
+        self.hex = data["hex"]
         self.xs_stock = data["xs_stock"]
         self.s_stock = data["s_stock"]
         self.m_stock = data["m_stock"]

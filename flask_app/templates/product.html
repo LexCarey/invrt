@@ -33,13 +33,12 @@
     <div class="container flex">
         <div class="photos">
             <div class="large-photo flex align-center justify-center">
-                <img id="main_image" src="../{{products[0].back_img}}" alt="">
+                <img id="main_image" src="../static/{{pictures[0][0].picture_link}}" alt="">
             </div>
             <div class="small-photos flex justify-around">
-                <img onclick="changeMain(this)" id="front-img" src="../{{products[0].front_img}}" alt="">
-                <img onclick="changeMain(this)" id="back-img" src="../{{products[0].back_img}}" alt="">
-                <img onclick="changeMain(this)" id="patch-img" src="../{{products[0].patch}}" alt="">
-                <img onclick="changeMain(this)" id="design-img" src="../{{products[0].design}}" alt="">
+                {% for picture in pictures[0] %}
+                    <img onclick="changeMain(this)" id="{{picture.name}}" src="../static/{{picture.picture_link}}" alt="">
+                {% endfor %}
             </div>
         </div>
         <div class="options flex justify-between wrap">
@@ -53,9 +52,11 @@
                     <input type="hidden" name="name" value="{{products[0].name}}">
                     <label for="color">Color:</label>
                     <br>
-                    {% for product in products %}
-                    <input type="radio" name="color" value="{{product.id}}" onclick="changeColor('../{{product.front_img}}', '../{{product.back_img}}', '../{{product.patch}}')">
-                    <label for="color">{{product.color}}</label>
+                    {% set count = namespace(value=0) %}
+                    {% for color in colors %}
+                    <label for="color">{{color.color}}</label>
+                    <input style="border: 2px solid {{color.hex}};" type="radio" name="color" value="{{color.color}}" onclick="changeColor('../static/{{pictures[count.value][0].picture_link}}', '../static/{{pictures[count.value][1].picture_link}}', '../static/{{pictures[count.value][2].picture_link}}')">
+                    {% set count.value = count.value + 1 %}
                     {% endfor %}
                     <br>
                     <label for="size">Size:</label>

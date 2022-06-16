@@ -3,6 +3,7 @@ from flask import render_template,redirect,request,session,flash
 from flask_app.models.product import Product
 from flask_app.models.color import Color
 from flask_app.models.picture import Picture
+import json
 
 #MAIN ROUTES
 @app.route('/')
@@ -45,4 +46,9 @@ def upcoming():
 @app.route('/products/<product>')
 def product(product):
     products = Product.get_product_by_name({ "name": product })
-    return render_template("product.html", products = products)
+    colors = Color.get_colors_by_product_id({"product_id": products[0].id})
+    pictures = []
+    for x in colors:
+        pictures.append(Picture.get_pictures_by_color_id({"color_id": x.id}))
+    
+    return render_template("product.html", products=products, colors=colors, pictures=pictures)

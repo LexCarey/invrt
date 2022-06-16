@@ -37,15 +37,12 @@
             <div class="clothing-display text-center">
                 <a href="/products/{{shirt.name}}"><img id="product_{{count.value}}" onmouseover="changeView(this, '../static/{{pictures[skipColor.value][1].picture_link}}')" onmouseout="changeView(this, '../static/{{pictures[skipColor.value][0].picture_link}}')" src="../static/{{pictures[skipColor.value][0].picture_link}}" alt="{{shirt.name}}"></a>
                 <a href="/products/{{shirt.name}}"><h1>{{shirt.name}}</h1></a>
-                <h4>
-                    {% set changeColor = namespace(value=skipColor.value) %}
-                    {% for color in colors[count.value] %}
-                        {{color.color}}
-                        <input type="radio" name="color{{count.value}}" value="{{color.color}}" onclick="swapColor('product_{{count.value}}', '../static/{{pictures[changeColor.value][0].picture_link}}', '../static/{{pictures[changeColor.value][1].picture_link}}')">
-                        {% set changeColor.value = changeColor.value + 1 %}
-                    {% endfor %}
-                </h4>
                 <h2>${{shirt.price}}</h2>
+                {% set changeColor = namespace(value=skipColor.value) %}
+                {% for color in colors[count.value] %}
+                    <input style="border: 2px solid {{color.hex}};" type="radio" name="color{{count.value}}" value="{{color.color}}" onclick="swapColor('product_{{count.value}}', '../static/{{pictures[changeColor.value][0].picture_link}}', '../static/{{pictures[changeColor.value][1].picture_link}}')">
+                    {% set changeColor.value = changeColor.value + 1 %}
+                {% endfor %}
             </div>
         {% set count.value = count.value + 1 %}
         {% set skipColor.value = skipColor.value + colors[count.value]|length %}
