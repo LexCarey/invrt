@@ -15,11 +15,11 @@
     <!-- Nav Bar -->
     <div class="header flex justify-between align-center text-aliceblue">
         <div class="nav flex justify-between">
-            <img src="{{ url_for('static', filename='/all_imgs/Invrt_Logo.jpg') }}" alt="INVRT Logo">
+            <a class="vertical-bottom" href="/"><img src="{{ url_for('static', filename='/all_imgs/Invrt_Logo.jpg') }}" alt="INVRT Logo"></a>
             <div class="right-header flex justify-between align-center">
                 <a href="/">Home</a>
-                <a id="{{'highlight' if products[0].drop_num == 1 }}" href="/drops/1">Drop 1</a>
-                <a id="{{'highlight' if products[0].drop_num == 2 }}" href="/drops/2">Drop 2</a>
+                <a id="{{'highlight' if num == 1 }}" href="/drops/1">Previous Drops</a>
+                <a id="{{'highlight' if num == 2 }}" href="/drops/2">Current Drop</a>
                 <a href="/upcoming-drops">Upcoming Drops</a>
                 <a href="/about">About</a>
                 <div class="smaller">

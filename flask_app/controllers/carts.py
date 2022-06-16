@@ -6,12 +6,8 @@ from flask_app.models.cart import Cart
 #TEMPLATE ROUTES
 @app.route('/cart')
 def cart():
-    if "user_id" in session:
-        id = { "id": session["user_id"]}
-        cart = Cart.get_cart(id)
-        return render_template("cart.html", cart=cart)
-    flash("Please create an account or sign-in to view your cart.", "cart")
-    return redirect('/account')
+    cart = Cart.get_cart(id)
+    return render_template("cart.html", cart=cart)
 
 
 

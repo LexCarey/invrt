@@ -7,10 +7,6 @@ function changeView(element, img) {
     element.src = img;
 }
 
-function goBack(element, img) {
-    element.src = img;
-}
-
 function changeMain(element) {
     main.src = element.src;
 }
@@ -20,4 +16,11 @@ function changeColor(front_img, back_img, patch_img){
     front.src = front_img;
     back.src = back_img;
     patch.src = patch_img;
+}
+
+function swapColor(productid, back, front){
+    product = document.getElementById(productid);
+    product.src = back;
+    product.onmouseover = function() {changeView(this, front)}
+    product.onmouseout = function() {changeView(this, back)}
 }

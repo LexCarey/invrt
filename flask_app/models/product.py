@@ -5,15 +5,9 @@ class Product():
     def __init__(self, data):
         self.id = data["id"]
         self.name = data["name"]
-        self.color = data["color"]
         self.description = data["description"]
         self.price = data["price"]
         self.drop_num = data["drop_num"]
-        self.soldout = data["soldout"]
-        self.design = data["design"]
-        self.patch = data["patch"]
-        self.front_img = data["front_img"]
-        self.back_img = data["back_img"]
         self.created_at = data["created_at"]
         self.updated_at = data["updated_at"]
 

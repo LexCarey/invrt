@@ -15,11 +15,11 @@
     <!-- Nav Bar -->
     <div class="header flex justify-between align-center text-aliceblue">
         <div class="nav flex justify-between">
-            <img src="{{ url_for('static', filename='/all_imgs/Invrt_Logo.jpg') }}" alt="INVRT Logo">
+            <a class="vertical-bottom" href="/"><img src="{{ url_for('static', filename='/all_imgs/Invrt_Logo.jpg') }}" alt="INVRT Logo"></a>
             <div class="right-header flex justify-between align-center">
                 <a href="/">Home</a>
-                <a id="{{'highlight' if num == 1 }}" href="/drops/1">Drop 1</a>
-                <a id="{{'highlight' if num == 2 }}" href="/drops/2">Drop 2</a>
+                <a id="{{'highlight' if num == 1 }}" href="/drops/1">Previous Drops</a>
+                <a id="{{'highlight' if num == 2 }}" href="/drops/2">Current Drop</a>
                 <a href="/upcoming-drops">Upcoming Drops</a>
                 <a href="/about">About</a>
                 <div class="smaller">
@@ -31,15 +31,24 @@
 
     <!-- Clothing Display -->
     <div class="container justify-around flex wrap text-center">
+        {% set count = namespace(value=0) %}
+        {% set skipColor = namespace(value=0) %}
         {% for shirt in products %}
-        <div class="clothing-display text-center {{'soldout' if shirt.soldout == 1 }}">
-            <a href="/products/{{shirt.name}}"><img onmouseover="changeView(this, '../{{shirt.front_img}}')" onmouseout="goBack(this, '../{{shirt.back_img}}')" src="../{{shirt.back_img}}" alt="{{shirt.name}}"></a>
-            {% if shirt.soldout == 1 %}
-            <div class="center"><h3>SOLDOUT</h3></div>
-            {% endif %}
-            <a href="/products/{{shirt.name}}"><h1>{{shirt.name}}</h1></a>
-            <h2>${{shirt.price}}</h2>
-        </div>
+            <div class="clothing-display text-center">
+                <a href="/products/{{shirt.name}}"><img id="product_{{count.value}}" onmouseover="changeView(this, '../static/{{pictures[skipColor.value][1].picture_link}}')" onmouseout="changeView(this, '../static/{{pictures[skipColor.value][0].picture_link}}')" src="../static/{{pictures[skipColor.value][0].picture_link}}" alt="{{shirt.name}}"></a>
+                <a href="/products/{{shirt.name}}"><h1>{{shirt.name}}</h1></a>
+                <h4>
+                    {% set changeColor = namespace(value=skipColor.value) %}
+                    {% for color in colors[count.value] %}
+                        {{color.color}}
+                        <input type="radio" name="color{{count.value}}" value="{{color.color}}" onclick="swapColor('product_{{count.value}}', '../static/{{pictures[changeColor.value][0].picture_link}}', '../static/{{pictures[changeColor.value][1].picture_link}}')">
+                        {% set changeColor.value = changeColor.value + 1 %}
+                    {% endfor %}
+                </h4>
+                <h2>${{shirt.price}}</h2>
+            </div>
+        {% set count.value = count.value + 1 %}
+        {% set skipColor.value = skipColor.value + colors[count.value]|length %}
         {% endfor %}
     </div>
     

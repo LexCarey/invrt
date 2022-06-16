@@ -53,13 +53,17 @@ a{
     flex: 1;
 }
 
+.vertical-bottom img{
+    vertical-align: bottom;
+}
+
 
 /* NAV BAR */
 .header{
-    padding: 25px 150px;
+    padding: 25px 35px;
     background-color: rgb(103, 90, 172);
     box-shadow: 0 0 25px black;
-    font-size: 20px;
+    font-size:1.25em;
     position: fixed;
     top: 0; left: 0; right: 0;
     width: auto !important;
@@ -72,31 +76,27 @@ a{
 }
 
 .nav{
-    width: 1100px;
+    max-width: 2000px;
+    width:100%;
     margin: 0 auto;
 }
 
-.right-header{
-    height: auto;
-    width: 500px;
+.right-header a{
+    transition: 200ms;
+    margin: 0 10px;
 }
 
-.header a:hover {
-    transition: 350ms;
-    transform: scale(1.2);
+.right-header a:hover {
+    transition: 200ms;
+    color: rgb(56, 48, 99);
+}
+
+.right-header img{
+    height: 1.25em;
 }
 
 #highlight{
     color: rgb(56, 48, 99);
-}
-
-.smaller img{
-    height: 25px;
-}
-
-.smaller img:hover{
-    transition: 350ms;
-    transform: scale(1.2);
 }
 
 
@@ -110,44 +110,11 @@ a{
 
 
 
-/* Account */
-.account{
-    font-size: 30px;
-    color: rgb(56, 48, 99);
-}
-
-.account form{
-    font-size: 25px;
-    text-align: right;
-    color: black;
-}
-
-input{
-    padding: 2px 8px;
-    font-size: 15px;
-}
-
-.signout a{
-    color: black !important;
-    font-size: 50px;
-}
-
-.signout{
-    text-align: right;
-}
-
-.messages{
-    color: black;
-    font-size: 20px;
-}
-
-
-
 /* About/Upcoming */
 .content{
     margin: 200px auto;
     width: 850px;
-    font-size: 25px;
+    font-size: 1.55em;
 }
 
 .content img{
@@ -166,7 +133,7 @@ input{
     color: black;
 }
 
-.clothing-display h2{
+.clothing-display{
     margin-bottom: 150px;
 }
 
@@ -203,11 +170,11 @@ input{
 }
 
 .options h1{
-    font-size: 50px;
+    font-size: 3.1em;
 }
 
 .options form{
-    font-size: 25px;
+    font-size: 1.55em;
 }
 
 .options input[type="submit"], .sold-button{
@@ -236,7 +203,7 @@ input{
 }
 
 .options h2{
-    font-size: 30px;
+    font-size: 1.6em;
 }
 
 .message{

@@ -14,17 +14,15 @@
 <body>
     <!-- Nav Bar -->
     <div class="header flex justify-between align-center text-aliceblue">
-        <div class="nav flex justify-between">
-            <img src="{{ url_for('static', filename='/all_imgs/Invrt_Logo.jpg') }}" alt="INVRT Logo">
+        <div class="nav flex justify-between align-center">
+            <a class="vertical-bottom" href="/home"><img src="{{ url_for('static', filename='/all_imgs/Invrt_Logo.jpg') }}" alt="INVRT Logo"></a>
             <div class="right-header flex justify-between align-center">
                 <a href="/">Home</a>
-                <a href="/drops/1">Drop 1</a>
-                <a href="/drops/2">Drop 2</a>
+                <a href="/drops/1">Previous Drops</a>
+                <a href="/drops/2">Current Drop</a>
                 <a id="highlight" href="/upcoming-drops">Upcoming Drops</a>
                 <a href="/about">About</a>
-                <div class="smaller">
-                    <a href="/cart"><img src="{{ url_for('static', filename='/all_imgs/cart2.png') }}" alt="Cart"></a>
-                </div>
+                <a href="/cart"><img src="{{ url_for('static', filename='/all_imgs/cart2.png') }}" alt="Cart"></a>
             </div>
         </div>
     </div>
