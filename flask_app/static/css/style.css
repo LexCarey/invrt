@@ -181,6 +181,7 @@ input[type="radio"]:checked {
     border: solid rgb(179, 179, 179);
     border-width: 2px;
     height: 100px;
+    cursor: pointer;
 }
 
 .options h1{

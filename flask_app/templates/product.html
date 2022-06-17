@@ -80,12 +80,7 @@
                     <br>
                     <input type="hidden" name="color" value="">
                     <input type="hidden" name="size" value="">
-                    {% if products[0].soldout == 1 %}
-                    <p onclick="alert('Item is currently sold out')" class="sold-button text-center">SOLDOUT</p>
-                    {% endif %}
-                    {% if products[0].soldout == 0 %}
                     <input type="submit" value="Add To Cart">
-                    {% endif %}
                 </form>
                 {% with messages = get_flashed_messages(category_filter=['product']) %}
                     {% for message in messages %}
