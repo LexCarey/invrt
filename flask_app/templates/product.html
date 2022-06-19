@@ -52,8 +52,8 @@
                     <input type="hidden" name="name" value="{{products[0].name}}">
                     {% set count = namespace(value=0) %}
                     {% for color in colors %}
-                    <label for="color">{{color.color}}</label>
                     <input style="border: 2px solid {{color.hex}};" type="radio" name="color" value="{{color.color}}" onclick="changeColor('../static/{{pictures[count.value][0].picture_link}}', '../static/{{pictures[count.value][1].picture_link}}', '../static/{{pictures[count.value][2].picture_link}}')" {% if count.value == 0 %} checked {% endif %}>
+                    <label for="color">{{color.color}}</label>
                     {% set count.value = count.value + 1 %}
                     {% endfor %}
                     <br>
@@ -71,8 +71,6 @@
                     <label for="quantity">Quantity:</label>
                     <select name="quantity">
                         <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
                     </select>
                     <br>
                     <input type="hidden" name="color" value="">
