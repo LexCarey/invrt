@@ -198,11 +198,14 @@ input[type="radio"]:checked {
     background-color: rgb(103, 90, 172);
     padding: 10px 67px;
     box-shadow: 3px 3px black;
+    width: 100%;
+}
 
+.options input[type="submit"]:hover{
+    background-color: rgb(150, 137, 216);
 }
 
 .options input[type="submit"]:active{
-    background-color: rgb(150, 137, 216);
     position: relative;
     top: 3px; left: 3px;
     box-shadow: 0 0 0;
@@ -219,6 +222,16 @@ input[type="radio"]:checked {
 .message{
     font-size: 10px;
     color: crimson;
+}
+
+.quantity{
+    width: 100%;
+}
+
+.quantity input{
+    width: 100%;
+    padding: 0 5px;
+    margin-left: 5px;
 }
 
 
