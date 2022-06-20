@@ -192,13 +192,14 @@ input[type="radio"]:checked {
     font-size: 1.55em;
 }
 
-.options input[type="submit"], .sold-button{
+.options input[type="submit"]{
     font-size: 30px;
     color: white;
     background-color: rgb(103, 90, 172);
     padding: 10px 67px;
     box-shadow: 3px 3px black;
     width: 100%;
+    border: black solid 2px;
 }
 
 .options input[type="submit"]:hover{
@@ -232,6 +233,10 @@ input[type="radio"]:checked {
     width: 100%;
     padding: 0 5px;
     margin-left: 5px;
+}
+
+.color-size-etc{
+    min-width: 60%;
 }
 
 
