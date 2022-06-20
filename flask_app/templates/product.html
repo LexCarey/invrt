@@ -73,7 +73,7 @@
                     </div>
                     <input type="hidden" name="color" value="">
                     <input type="hidden" name="size" value="">
-                    <input id="AddCartButton" type="submit" {% if colors[0].m_stock > 0 %} value="Add To Cart" {% else %} value="Sold Out" {% endif %}>
+                    <input id="AddCartButton" type="submit" {% if colors[0].m_stock > 0 %} value="Add To Cart" {% else %} value="Size Sold Out" {% endif %}>
                 </form>
                 {% with messages = get_flashed_messages(category_filter=['product']) %}
                     {% for message in messages %}

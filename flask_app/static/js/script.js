@@ -70,7 +70,7 @@ const changeSize = (stock) => {
     } else {
         quantity.value = 0
         quantity.min = 0
-        addcart.value = "Sold Out"
+        addcart.value = "Size Sold Out"
         addcart.disabled = true
     }
 }
