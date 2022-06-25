@@ -40,7 +40,7 @@
                 <h2>${{shirt.price}}</h2>
                 {% set changeColor = namespace(value=skipColor.value) %}
                 {% for color in colors[count.value] %}
-                    <input style="border: 2px solid {{color.hex}};" type="radio" name="color{{count.value}}" value="{{color.color}}" onclick="swapColor('product_{{count.value}}', '../static/{{pictures[changeColor.value][0].picture_link}}', '../static/{{pictures[changeColor.value][1].picture_link}}')" {% if changeColor.value == skipColor.value %} checked {% endif %}>
+                    <input style="background-color: {{color.hex}};" type="radio" name="color{{count.value}}" value="{{color.color}}" onclick="swapColor('product_{{count.value}}', '../static/{{pictures[changeColor.value][0].picture_link}}', '../static/{{pictures[changeColor.value][1].picture_link}}')" {% if changeColor.value == skipColor.value %} checked {% endif %}>
                     {% set changeColor.value = changeColor.value + 1 %}
                 {% endfor %}
             </div>
