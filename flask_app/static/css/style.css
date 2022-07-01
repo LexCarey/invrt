@@ -61,15 +61,16 @@ input[type="radio"] {
 	appearance: none;
 	width: 25px;
 	height: 25px;
-	border: 2px solid rgb(183, 183, 183);
+	border: 2px solid white;
 	border-radius: 50%;
 	background-clip: content-box;
-	padding: 3px;
-    background-color: rgb(183, 183, 183);
+    background-color: rgb(57, 52, 57);
 }
 
 input[type="radio"]:checked {
+    transition: 300ms;
 	border: 2px solid black;
+    padding: 3px;
 }
 
 
@@ -240,6 +241,13 @@ input[type="radio"]:checked {
     min-width: 60%;
 }
 
+.color-size-etc input[type=radio]{
+    margin-right: 1px;
+}
+
+.color-size-etc label{
+    margin-right: 10px;
+}
 
 
 /* Cart */
