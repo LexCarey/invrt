@@ -91,12 +91,6 @@ input[type="radio"]:checked {
     height: 32px;
 }
 
-.nav{
-    max-width: 2000px;
-    width:100%;
-    margin: 0 auto;
-}
-
 .right-header a{
     transition: 200ms;
     margin: 0 10px;

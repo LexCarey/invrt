@@ -2,6 +2,8 @@ main = document.getElementById("main_image");
 front = document.getElementById("Front");
 back = document.getElementById("Back");
 design = document.getElementById("Design");
+extra1 = document.getElementById("Extra_Img1");
+extra2 = document.getElementById("Extra_Img2");
 xsbutton = document.getElementById("xs");
 sbutton = document.getElementById("s");
 mbutton = document.getElementById("m");
@@ -17,11 +19,17 @@ const changeMain = (element) => {
     main.src = element.src;
 }
 
-const changeColor = (xs, s, m, l, xl, back_img, front_img, design_img) =>{
+const changeColor = (xs, s, m, l, xl, back_img, front_img, design_img, extra_img1=null, extra_img2=null) =>{
     main.src = back_img;
     front.src = front_img;
     back.src = back_img;
     design.src = design_img;
+    if (extra_img1!=null){
+        extra_img1.src = extra_img1
+    }
+    if (extra_img2!=null){
+        extra_img2.src = extra_img2
+    }
     xsbutton.onclick = function() {changeSize(xs)}
     if (xsbutton.checked) {
         changeSize(xs)
