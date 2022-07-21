@@ -51,30 +51,31 @@
                     <div class="flex align-center">
                         {% set count = namespace(value=0) %}
                         {% for color in colors %}
-                        <input style="background-color: {{color.hex}};" type="radio" name="color" value="{{color.color}}" onclick="changeColor('{{colors[count.value].xs_stock}}', '{{colors[count.value].s_stock}}', '{{colors[count.value].m_stock}}', '{{colors[count.value].l_stock}}', '{{colors[count.value].xl_stock}}', '../static/{{pictures[count.value][0].picture_link}}', '../static/{{pictures[count.value][1].picture_link}}', '../static/{{pictures[count.value][2].picture_link}}')" {% if count.value == 0 %} checked {% endif %}>
+                        <input style="background-color: {{color.hex}};" type="radio" name="color" value="{{color.color}}" onclick="changeColor('{{colors[count.value].XS_stock}}', '{{colors[count.value].S_stock}}', '{{colors[count.value].M_stock}}', '{{colors[count.value].L_stock}}', '{{colors[count.value].XL_stock}}', '../static/{{pictures[count.value][0].picture_link}}', '../static/{{pictures[count.value][1].picture_link}}', '../static/{{pictures[count.value][2].picture_link}}')" {% if count.value == 0 %} checked {% endif %}>
                         <label for="color">{{color.color}}</label>
                         {% set count.value = count.value + 1 %}
                         {% endfor %}
                     </div>
                     <div class="flex align-center sizes">
-                        <input id="xs" type="radio" name="size" value="XS" onclick="changeSize('{{colors[0].xs_stock}}')">
+                        <input id="xs" type="radio" name="size" value="XS" onclick="changeSize('{{colors[0].XS_stock}}')">
                         <label for="size">XS</label>
-                        <input id="s" type="radio" name="size" value="S" onclick="changeSize('{{colors[0].s_stock}}')">
+                        <input id="s" type="radio" name="size" value="S" onclick="changeSize('{{colors[0].S_stock}}')">
                         <label for="size">S</label>
-                        <input id="m" type="radio" name="size" value="M" onclick="changeSize('{{colors[0].m_stock}}')" checked>
+                        <input id="m" type="radio" name="size" value="M" onclick="changeSize('{{colors[0].M_stock}}')" checked>
                         <label for="size">M</label>
-                        <input id="l" type="radio" name="size" value="L" onclick="changeSize('{{colors[0].l_stock}}')">
+                        <input id="l" type="radio" name="size" value="L" onclick="changeSize('{{colors[0].L_stock}}')">
                         <label for="size">L</label>
-                        <input id="xl" type="radio" name="size" value="XL" onclick="changeSize('{{colors[0].xl_stock}}')">
+                        <input id="xl" type="radio" name="size" value="XL" onclick="changeSize('{{colors[0].XL_stock}}')">
                         <label for="size">XL</label>
                     </div>
                     <div class="flex align-center quantity">
                         <label for="quantity">Quantity:</label>
-                        <input id="quantity" type="number" max="{{colors[0].m_stock}}" {% if colors[0].m_stock > 0 %} min="1" value="1" {% else %} min="0" value="0" {% endif %}>
+                        <input name="quantity" id="quantity" type="number" max="{{colors[0].M_stock}}" {% if colors[0].M_stock > 0 %} min="1" value="1" {% else %} min="0" value="0" {% endif %}>
                     </div>
                     <input type="hidden" name="color" value="">
                     <input type="hidden" name="size" value="">
-                    <input id="AddCartButton" type="submit" {% if colors[0].m_stock > 0 %} value="Add To Cart" {% else %} value="Size Sold Out" {% endif %}>
+                    <input type="hidden" name="price" value="{{products[0].price}}">
+                    <input class="purple-button" id="AddCartButton" type="submit" {% if colors[0].M_stock > 0 %} value="Add To Cart" {% else %} value="Size Sold Out" disabled {% endif %}>
                 </form>
                 {% with messages = get_flashed_messages(category_filter=['product']) %}
                     {% for message in messages %}

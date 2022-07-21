@@ -188,24 +188,33 @@ input[type="radio"]:checked {
     font-size: 1.55em;
 }
 
-.options input[type="submit"]{
+.purple-button{
     font-size: 30px;
     color: white;
     background-color: rgb(103, 90, 172);
     padding: 10px 67px;
     box-shadow: 3px 3px black;
-    width: 100%;
     border: black solid 2px;
+    cursor: pointer;
 }
 
-.options input[type="submit"]:hover{
+.purple-button:hover{
     background-color: rgb(150, 137, 216);
 }
 
-.options input[type="submit"]:active{
+.purple-button:active{
     position: relative;
     top: 3px; left: 3px;
     box-shadow: 0 0 0;
+}
+
+.checkout-button{
+    margin-right: none !important;
+    margin-left: 20px;
+}
+
+#AddCartButton{
+    width: 100%;
 }
 
 .options select{
@@ -246,13 +255,23 @@ input[type="radio"]:checked {
 
 /* Cart */
 .in-cart{
-    width: 100%;
     margin-bottom: 5px;
-    border: solid rgb(179, 179, 179);
+    border-bottom: solid rgb(179, 179, 179);
     border-width: 2px;
-    border-radius: 5px;
     padding: 5px 15px;
     font-size: 30px;
+}
+
+.left-cart form{
+    display: flex;
+    align-items: center;
+}
+
+.left-cart form input{
+    border: none;
+    border-bottom: solid rgb(179, 179, 179);
+    outline: none !important;
+    font-size: 20px;
 }
 
 .in-cart p{
@@ -280,6 +299,17 @@ input[type="radio"]:checked {
     color: black;
     text-decoration: underline;
     margin-left: 20px;
+}
+
+.cart_total{
+    margin-bottom: 10px;
+}
+
+.checkout-div{
+    width: 100% !important;
+    display: flex;
+    justify-content: right;
+    margin-top: 10px;
 }
 
 

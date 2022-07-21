@@ -30,25 +30,34 @@
     <!-- CART -->
     <div class="container">
         <h1 class="your-cart">Your Cart:</h1>
+        <h1 class="cart_total">Current Cart Total: ${{cart_total}}{% if not cart %}0{% endif %}</h1>
         {% for products in cart %}
         <div class="in-cart flex align-center justify-between text-center">
             <div class="left-cart flex align-center text-center">
-                <p>{{products.product.name}}</p>
-                <img src="{{products.product.back_img}}" alt="">
-                <p>Color: {{products.product.color}}</p>
+                <img src="../static/{{products.picture}}" alt="img">
+                <p>{{products.name}}</p>
+                <p>Color: {{products.color}}</p>
                 <p>Size: {{products.size}}</p>
                 <form action="/update_cart" method="post">
-                <input type="hidden" name="id" value="{{products.id}}">
-                <p>Quantity: <input type="number" name="quantity" value="{{products.quantity}}" min="0" max="2"></p>
+                <p>Quantity:</p>
+                <input type="number" name="quantity" value="{{products.quantity}}" min="0" max="{{products.size_stock}}">
             </div>
             <div class="right-cart flex align-center text-center">
                 <input type="submit" value="Update">
                 </form>
-                <a href="/remove_from_cart/{{products.id}}">Remove</a>
+                <a href="/remove_from_cart">Remove</a>
             </div>
         </div>
         {% endfor %}
         {% if not cart %}
         <p>Your cart is currently empty.</p>
+        {% endif %}
+        {% if cart %}
+        <div class="flex checkout-div">
+            <a class="purple-button" href="/clear_cart">Clear Cart</a>
+            <form action="/create-checkout-session" method="POST">
+                <button class="purple-button checkout-button" type="submit">Checkout</button>
+            </form>
+        </div>
         {% endif %}
     </div>

@@ -1,46 +1,96 @@
-from flask_app import app
-from flask import render_template,redirect,request,session,flash
-from flask_app.models.cart import Cart
+from turtle import back
+from flask_app import app, creds
+from flask import render_template, redirect, request, session, flash
+from flask_app.models.product import Product
+from flask_app.models.color import Color
+from flask_app.models.picture import Picture
+import stripe
 
+stripe.api_key = creds.STRIPE_SECRET_KEY
+
+@app.route('/create-checkout-session', methods=['POST'])
+def create_checkout_session():
+    items_in_cart = []
+    for item in session['cart']:
+        items_in_cart.append({'price': item["stripe_link"], 'quantity': item["quantity"]})
+    checkout_session = stripe.checkout.Session.create(
+        line_items=items_in_cart,
+        mode='payment',
+        success_url='http://localhost:5000/success',
+        cancel_url='http://localhost:5000/cart',
+        shipping_address_collection={
+        'allowed_countries': ['US', 'CA'],
+        },
+        shipping_options=[
+            {
+            'shipping_rate_data': {
+                'type': 'fixed_amount',
+                'fixed_amount': {
+                    'amount': 700,
+                    'currency': 'usd',
+                },
+                'display_name': 'First Class',
+                # Delivers between 5-7 business days
+                'delivery_estimate': {
+                    'minimum': {
+                        'unit': 'business_day',
+                        'value': 5,
+                    },
+                'maximum': {
+                    'unit': 'business_day',
+                    'value': 7,
+                },
+                }
+            }
+            },
+        ],
+    )
+    return redirect(checkout_session.url, code=303)
 
 #TEMPLATE ROUTES
 @app.route('/cart')
 def cart():
-    cart = Cart.get_cart(id)
-    return render_template("cart.html", cart=cart)
-
-
-
-
+    if 'cart' not in session:
+        session['cart'] = []
+    if 'cart_total' not in session:
+        session['cart_total'] = 0.00
+    return render_template("cart.html", cart_total=session["cart_total"], cart=session["cart"])
 
 #ACTION ROUTES
 @app.route('/add-cart', methods=['POST'])
 def add_cart():
+    if 'cart' not in session:
+        session['cart'] = []
+    if 'cart_total' not in session:
+        session['cart_total'] = 0.00
     product = request.form["name"]
-    if "user_id" in session:
-        if Cart.validate_cart(request.form):
-            data = {
-                "size": request.form["size"],
-                "quantity": request.form["quantity"],
-                "user_id": session["user_id"],
-                "product_id": request.form["color"]
-            }
-            Cart.add_to_cart(data)
-            return redirect('/cart')
-        return redirect(f'/products/{product}')
-    flash("Please create an account or sign-in to add to your cart.", "product")
-    return redirect(f'/products/{product}')
-
-@app.route('/remove_from_cart/<int:id>')
-def remove_from_cart(id):
-    Cart.remove_item_from_cart({ "id": id })
+    cart_list = session['cart']
+    add_to_cart_flag = True
+    for item in cart_list:
+        if item["name"] == product and item["color"] == request.form["color"] and item["size"] == request.form["size"]:
+            item["quantity"] = int(item["quantity"]) + int(request.form["quantity"])
+            add_to_cart_flag = False
+    if add_to_cart_flag:
+        color = Color.get_color_by_name({"color": request.form["color"]})[0]
+        back_preview = Picture.get_pictures_by_color_id({"color_id": color["id"]})[0].picture_link
+        print("COLOR SIZE LINK VVVVV")
+        print(color[request.form["size"] + "_link"])
+        cart_list.append({
+            "name": product,
+            "color": request.form["color"],
+            "size": request.form["size"],
+            "size_stock": color[request.form["size"] + "_stock"],
+            "quantity": int(request.form["quantity"]),
+            "picture": back_preview,
+            "stripe_link": color[request.form["size"] + "_link"]
+        })
+    session["cart"]=cart_list
+    session["cart_total"] = session["cart_total"] + (float(request.form["price"]) * int(request.form["quantity"]))
+    print(session["cart"])
     return redirect('/cart')
 
-@app.route('/update_cart', methods=['POST'])
-def update_from_cart():
-    data = {
-        "id": request.form["id"],
-        "quantity": request.form["quantity"]
-    }
-    Cart.update_item_from_cart(data)
+@app.route('/clear_cart')
+def clear_cart():
+    session['cart'] = []
+    session['cart_total'] = 0.00
     return redirect('/cart')

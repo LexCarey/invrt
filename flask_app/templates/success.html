@@ -9,27 +9,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="{{ url_for('static', filename='/all_imgs/icon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
-    <title>INVRT - Upcoming Drops</title>
+    <title>INVRT - Payment Success</title>
 </head>
 <body>
     <!-- Nav Bar -->
     <div class="header flex justify-between align-center text-aliceblue">
-        <a class="vertical-bottom" href="/home"><img src="{{ url_for('static', filename='/all_imgs/Invrt_Logo.jpg') }}" alt="INVRT Logo"></a>
+        <a class="vertical-bottom" href="/"><img src="{{ url_for('static', filename='/all_imgs/Invrt_Logo.jpg') }}" alt="INVRT Logo"></a>
         <div class="right-header flex justify-between align-center">
             <a href="/">Home</a>
-            <a href="/drops/1">Previous Drops</a>
-            <a href="/drops/2">Current Drop</a>
-            <a id="highlight" href="/upcoming-drops">Upcoming Drops</a>
+            <a href="/drops/1">Drop 1</a>
+            <a href="/drops/2">Drop 2</a>
+            <a href="/upcoming-drops">Upcoming Drops</a>
             <a href="/about">About</a>
-            <a href="/cart"><img src="{{ url_for('static', filename='/all_imgs/cart2.png') }}" alt="Cart"></a>
+            <div class="smaller">
+                <a href="/cart"><img src="{{ url_for('static', filename='/all_imgs/cart2.png') }}" alt="Cart"></a>
+            </div>
         </div>
     </div>
 
-    <!-- Content -->
+    <!-- Error -->
     <div class="content text-center">
-        <p>Upcoming drops/announcements will be shown here.</p>
-        <a href="https://www.instagram.com/invrtofficial/"><img src="{{ url_for('static', filename='/all_imgs/instagram.png') }}" alt="instagram"></a>
-        <a href="https://twitter.com/InvrtOfficial"><img src="{{ url_for('static', filename='/all_imgs/twitter.png') }}" alt="twitter"></a>
+        <h1>Thanks for your order!</h1>
+        <p>We appreciate your business!</p>
+        <p>
+        If you have any questions, please email
+        <a style="color: black; text-decoration: underline" href="mailto:support@invrtofficial.com">support@invrtofficial.com</a>.
+        </p>
+        <p>Click one of the tabs at the top or click <a style="color: black; text-decoration: underline" href="/">here</a> to head back to the home page.</p>
     </div>
 </body>
 </html>
