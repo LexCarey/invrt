@@ -17,8 +17,8 @@
         <a class="vertical-bottom" href="/"><img src="{{ url_for('static', filename='/all_imgs/Invrt_Logo.jpg') }}" alt="INVRT Logo"></a>
         <div class="right-header flex justify-between align-center">
                 <a href="/">Home</a>
-            <a href="/drops/1">Drop 1</a>
-            <a href="/drops/2">Drop 2</a>
+                <a id="{{'highlight' if num == 1 }}" href="/drops/1">Previous Drops</a>
+                <a id="{{'highlight' if num == 2 }}" href="/drops/2">Current Drop</a>
             <a href="/upcoming-drops">Upcoming Drops</a>
             <a href="/about">About</a>
             <div class="smaller flex">
@@ -30,7 +30,7 @@
     <!-- CART -->
     <div class="container">
         <h1 class="your-cart">Your Cart:</h1>
-        <h1 class="cart_total">Current Cart Total: ${{cart_total}}{% if not cart %}0{% endif %}</h1>
+        <h1 class="cart_total">Current Cart Total: ${{cart_total}}</h1>
         {% for products in cart %}
         <div class="in-cart flex align-center justify-between text-center">
             <div class="left-cart flex align-center text-center">
@@ -38,14 +38,14 @@
                 <p>{{products.name}}</p>
                 <p>Color: {{products.color}}</p>
                 <p>Size: {{products.size}}</p>
-                <form action="/update_cart" method="post">
+                <form action="/update_cart/{{products.cart_id}}" method="post">
                 <p>Quantity:</p>
                 <input type="number" name="quantity" value="{{products.quantity}}" min="0" max="{{products.size_stock}}">
             </div>
             <div class="right-cart flex align-center text-center">
                 <input type="submit" value="Update">
                 </form>
-                <a href="/remove_from_cart">Remove</a>
+                <a href="/remove_from_cart/{{products.cart_id}}">Remove</a>
             </div>
         </div>
         {% endfor %}
