@@ -45,8 +45,8 @@ a{
 }
 
 .container{
-    width: 1100px;
     margin: 200px auto 0;
+    max-width: 1000px;
 }
 
 #col-1{
@@ -136,7 +136,9 @@ input[type="radio"]:checked {
 
 /* Drops */
 .clothing-display img{
-    height: 500px;
+    max-height: 500px;
+    min-height: 250px;
+    height: 50vw;
 }
 
 .clothing-display a{
@@ -144,7 +146,7 @@ input[type="radio"]:checked {
 }
 
 .clothing-display{
-    margin-bottom: 150px;
+    margin-bottom: 50px;
 }
 
 .clothing-display:hover{
@@ -193,6 +195,7 @@ input[type="radio"]:checked {
     color: white;
     background-color: rgb(103, 90, 172);
     padding: 10px 67px;
+    text-align: center;
     box-shadow: 3px 3px black;
     border: black solid 2px;
     cursor: pointer;
@@ -210,7 +213,8 @@ input[type="radio"]:checked {
 
 .checkout-button{
     margin-right: none !important;
-    margin-left: 20px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 #AddCartButton{
@@ -254,33 +258,38 @@ input[type="radio"]:checked {
 
 
 /* Cart */
+.cart-page{
+    margin: 150px auto;
+}
+
 .in-cart{
     margin-bottom: 5px;
     border-bottom: solid rgb(179, 179, 179);
     border-width: 2px;
     padding: 5px 15px;
-    font-size: 30px;
+    font-size: 18px;
+    display: flex;
+    flex: 1;
 }
 
 .left-cart form{
-    display: flex;
     align-items: center;
 }
 
 .left-cart form input{
     border: none;
-    border-bottom: solid rgb(179, 179, 179);
+    border-bottom: 2px solid rgb(179, 179, 179);
     outline: none !important;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .in-cart p{
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .in-cart img{
     margin-right: 20px;
-    height: 70px;
+    height: 125px;
     width: auto;
 }
 
@@ -288,17 +297,18 @@ input[type="radio"]:checked {
     font-size: 50px;
 }
 
-.right-cart input{
+.update-remove input{
     cursor: pointer;
     border-width: 0;
     background-color: white;
 }
 
-.right-cart a, .right-cart input{
-    font-size: 20px;
+.update-remove a, .update-remove input{
+    font-size: 18px;
     color: black;
     text-decoration: underline;
-    margin-left: 20px;
+    margin-right: 20px;
+    border: none !important;
 }
 
 .cart_total{
@@ -306,12 +316,57 @@ input[type="radio"]:checked {
 }
 
 .checkout-div{
-    width: 100% !important;
-    display: flex;
-    justify-content: right;
-    margin-top: 10px;
+    margin-top: auto;
+    margin-left: 15px;
 }
 
+.cart-details{
+    text-align: left;
+    display: block;
+}
+
+.small-price{
+    display: none;
+}
+
+@media (max-width: 1100px){
+    .cart-page{
+        margin-left: 10vw;
+        margin-right: 10vw;
+        display: block !important;
+    }
+    .checkout-div{
+        margin: 0;
+    }
+    .checkout-button{
+        margin-top: 10px;
+    }
+    .checkout-div button{
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 550px){
+    .in-cart{
+        font-size: 15px;
+    }
+    .update-remove a, .update-remove input{
+        font-size: 15px;
+    }
+    .your-cart{
+        font-size: 40px;
+    }
+    .cart_total{
+        font-size: 20px;
+    }
+    .small-price{
+        display: block;
+    }
+    .big-price{
+        display: none;
+    }
+}
 
 /* RADIO BUTTONS */
 /* input[type='radio']:after {
