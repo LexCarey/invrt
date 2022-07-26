@@ -10,6 +10,7 @@ mbutton = document.getElementById("m");
 lbutton = document.getElementById("l");
 xlbutton = document.getElementById("xl");
 addcart = document.getElementById("AddCartButton");
+menu = document.getElementById("side-menu");
 
 const changeView = (element, img) => {
     element.src = img;
@@ -81,4 +82,12 @@ const changeSize = (stock) => {
         addcart.value = "Size Sold Out"
         addcart.disabled = true
     }
+}
+
+const openmenu = () => {
+    menu.classList.add("menu-open")
+}
+
+const closemenu = () => {
+    menu.classList.remove("menu-open")
 }

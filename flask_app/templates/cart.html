@@ -17,21 +17,55 @@
         <a class="vertical-bottom" href="/"><img src="{{ url_for('static', filename='/all_imgs/Invrt_Logo.jpg') }}" alt="INVRT Logo"></a>
         <div class="right-header flex justify-between align-center">
                 <a href="/">Home</a>
-                <a id="{{'highlight' if num == 1 }}" href="/drops/1">Previous Drops</a>
-                <a id="{{'highlight' if num == 2 }}" href="/drops/2">Current Drop</a>
+                <a href="/drops/1">Previous Drops</a>
+                <a href="/drops/2">Current Drop</a>
             <a href="/upcoming-drops">Upcoming Drops</a>
-            <a href="/about">About</a>
-            <div class="smaller flex">
-                <a href="/cart"><img src="{{ url_for('static', filename='/all_imgs/cart_purple.png') }}" alt="Cart"></a>
+            <div class="smaller flex align-center">
+                <a class="flex align-center" href="/cart"><img src="{{ url_for('static', filename='/all_imgs/cart_purple.png') }}" alt="Cart"></a>
             </div>
         </div>
+        <div class="menu smaller flex align-center">
+            <img onclick="openmenu()" src="{{ url_for('static', filename='/all_imgs/menu_icon.png') }}" alt="Menu">
+        </div>
+    </div>
+
+    <!-- Side Menu -->
+    <div id="side-menu">
+        <div class="top-menu-option flex align-center">
+            <img onclick="closemenu()" src="{{ url_for('static', filename='/all_imgs/x_button.png') }}" alt="Close">
+        </div>
+        <a href="/">
+            <div class="menu-option flex align-center">
+                Home
+            </div>
+        </a>
+        <a id="{{'highlight' if num == 1 }}" href="/drops/1">
+            <div class="menu-option flex align-center">
+                Previous Drops
+            </div>
+        </a>
+        <a id="{{'highlight' if num == 2 }}" href="/drops/2">
+            <div class="menu-option flex align-center">
+                Current Drop
+            </div>
+        </a>
+        <a href="/upcoming-drops">
+            <div class="menu-option flex align-center">
+                Upcoming Drops
+            </div>
+        </a>
+        <a class="flex align-center" href="/cart">
+            <div class="menu-option flex align-center smaller">
+                <img src="{{ url_for('static', filename='/all_imgs/cart_purple.png') }}" alt="Cart">
+            </div>
+        </a>
     </div>
 
     <!-- CART -->
     <div class="container cart-page flex">
         <div style="flex: 1;">
             <h1 class="your-cart">Your Cart:</h1>
-            <h1 class="cart_total">Current Cart Total: ${{cart_total}}</h1>
+            <h1 class="cart_total">Total: ${{cart_total}}</h1>
             {% for products in cart %}
             <div class="in-cart align-center justify-between text-center">
                 <div class="left-cart flex align-center text-center">
@@ -39,8 +73,8 @@
                     <div class="cart-details align-center">
                         <p class="small-price">${{products.price}}</p>
                         <p>{{products.name}}</p>
-                        <p>Color: {{products.color}}</p>
-                        <p>Size: {{products.size}}</p>
+                        <p>{{products.color}}</p>
+                        <p>{{products.size}}</p>
                         <form action="/update_cart/{{products.cart_id}}" method="post">
                         <div class="flex">
                             <p>Quantity:</p>
@@ -70,4 +104,28 @@
             </form>
         </div>
         {% endif %}
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-links flex">
+                    <p><a href="/about">About Us</a></p>
+                    <p class="footer-dividers">|</p>
+                    <p><a href="/help/FAQ">FAQ</a></p>
+                    <p class="footer-dividers">|</p>
+                    <p><a href="/help/returns">Returns & Exchanges</a></p>
+                    <p class="footer-dividers">|</p>
+                    <p><a href="/help/contact">Contact Us</a></p>
+                    <p class="footer-dividers">|</p>
+                    <p><a href="/help/privacy">Privacy Policy</a></p>
+                </div>
+                <div class="footer-medias text-center">
+                    <a target="_blank" href="https://www.instagram.com/invrtofficial/"><img src="{{ url_for('static', filename='/all_imgs/instagram.png') }}" alt="instagram"></a>
+                    <a target="_blank" href="https://twitter.com/InvrtOfficial"><img src="{{ url_for('static', filename='/all_imgs/twitter.png') }}" alt="twitter"></a>
+                </div>
+            </div>
+        </footer>
     </div>
+
+    <script src="{{ url_for('static', filename='/js/script.js') }}"></script>
+</body>
+</html>
