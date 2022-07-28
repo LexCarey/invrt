@@ -9,14 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="{{ url_for('static', filename='/all_imgs/icon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
-    <title>INVRT - Home</title>
+    <title>INVRT - Returns</title>
 </head>
 <body>
     <!-- Nav Bar -->
     <div class="header flex justify-between align-center text-white">
         <a class="vertical-bottom" href="/"><img src="{{ url_for('static', filename='/all_imgs/Invrt_Logo.jpg') }}" alt="INVRT Logo"></a>
         <div class="right-header flex justify-between align-center">
-            <a id="highlight" href="/">Home</a>
+            <a href="/">Home</a>
             <a href="/drops/1">Previous Drops</a>
             <a href="/drops/2">Current Drop</a>
             <a href="/upcoming-drops">Upcoming Drops</a>
@@ -34,7 +34,7 @@
         <div class="top-menu-option flex align-center">
             <img onclick="closemenu()" src="{{ url_for('static', filename='/all_imgs/x_button.png') }}" alt="Close">
         </div>
-        <a id="highlight" href="/">
+        <a href="/">
             <div class="menu-option flex align-center">
                 Home
             </div>
@@ -61,15 +61,34 @@
         </a>
     </div>
 
-    <!-- Content -->
-    <div class="cover text-center">
-        <img src="{{ url_for('static', filename='/all_imgs/Invrt_Home.jpg') }}" alt="Colli">
+    <!-- Clothing Display -->
+    <div class="container justify-around flex text-center help">
+        <div style="width: 100%;">
+            <h1 class="help-title">Returns & Exchanges</h1>
+            <div style="width: 100%;" class="flex">
+                <ul>
+                    <a href="/help/about"><li><p>About Us</p></li></a>
+                    <a href="/help/faq"><li><p>FAQ</p></li></a>
+                    <a href="/help/returns"><li><p>Returns & Exchanges</p></li></a>
+                    <a href="/help/contact"><li><p>Contact Us</p></li></a>
+                    <a href="/help/privacy"><li><p>Privacy Policy</p></li></a>
+                </ul>
+                <div id="col-1" class="help-content text-left">
+                    <p> INVRT stands for Invert which means to make opposite position, order, or arrangement. This name signifies the brands encouragement to do the opposite of mainstream media and to switch around normal societal standards. Invrt is a Bay Area produced clothing brand which focuses on presenting graphic design created elements through its style and design compositions.</p>
+                    <br>
+                    <p>Each design holds hours of work that includes fine tuning and editing each graphic to personal perfection. I've spent years studying graphic design and through extensive practice, finally gained the courage to promote my art to the public, in the form of clothing. All designs are made through the manipulation of real images and are not hand drawn, creating a realistic sense to each shirt. I hope to continue to grow this brand into a recognizable name in the clothing industry and thank everyone for their support by helping me turn a childhood dream into reality.</p>
+                    <p>-Alex Brodeur</p>
+                    <a target="_blank" href="https://www.instagram.com/invrtofficial/"><img src="{{ url_for('static', filename='/all_imgs/instagram.png') }}" alt="instagram"></a>
+                    <a target="_blank" href="https://twitter.com/InvrtOfficial"><img src="{{ url_for('static', filename='/all_imgs/twitter.png') }}" alt="twitter"></a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer>
-            <div class="footer-container">
-                <div class="footer-links flex">
+        <div class="footer-container">
+            <div class="footer-links flex">
                     <p><a href="/help/about">About Us</a></p>
                     <p class="footer-dividers">|</p>
                     <p><a href="/help/faq">FAQ</a></p>
@@ -79,12 +98,12 @@
                     <p><a href="/help/contact">Contact Us</a></p>
                     <p class="footer-dividers">|</p>
                     <p><a href="/help/privacy">Privacy Policy</a></p>
-                </div>
-                <div class="footer-medias text-center">
-                    <a target="_blank" href="https://www.instagram.com/invrtofficial/"><img src="{{ url_for('static', filename='/all_imgs/instagram.png') }}" alt="instagram"></a>
-                    <a target="_blank" href="https://twitter.com/InvrtOfficial"><img src="{{ url_for('static', filename='/all_imgs/twitter.png') }}" alt="twitter"></a>
-                </div>
             </div>
+            <div class="footer-medias text-center">
+                <a target="_blank" target="_blank" href="https://www.instagram.com/invrtofficial/"><img src="{{ url_for('static', filename='/all_imgs/instagram.png') }}" alt="instagram"></a>
+                <a target="_blank" target="_blank" href="https://twitter.com/InvrtOfficial"><img src="{{ url_for('static', filename='/all_imgs/twitter.png') }}" alt="twitter"></a>
+            </div>
+        </div>
     </footer>
     
     <script src="{{ url_for('static', filename='/js/script.js') }}"></script>

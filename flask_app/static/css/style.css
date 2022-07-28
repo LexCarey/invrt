@@ -40,6 +40,10 @@ body{
     text-align: center;
 }
 
+.text-left{
+    text-align: left;
+}
+
 a{
     text-decoration: none;
     color: white;
@@ -429,6 +433,47 @@ footer img{
 .small-price{
     display: none;
 }
+
+/* Help */
+
+.help-title{
+    margin-left: 23%;
+    padding: 0 2%;
+}
+
+.help li{
+    list-style: none;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid black;
+    color: black;
+}
+
+.help li:hover{
+    transition: 350ms;
+    background-color: rgb(245, 245, 245);
+}
+
+.help ul{
+    width: 23%;
+    border-top: 1px solid black;
+}
+
+.help-content{
+    padding: 0 5%;
+    font-size: 1em;
+}
+
+.help-content img{
+    height: 1.5em;
+}
+
+.help-content a{
+    color: black;
+    text-decoration: underline;
+}
+
+
 
 @media (max-width: 1100px){
     .cart-page{

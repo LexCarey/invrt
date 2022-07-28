@@ -10,10 +10,6 @@ import json
 def index():
     return render_template("index.html")
 
-@app.route('/about')
-def about():
-    return render_template("about.html")
-
 @app.route('/success')
 def success():
     return render_template("success.html")
@@ -21,6 +17,31 @@ def success():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html")
+
+
+
+@app.route('/help/about')
+def about():
+    return render_template("help_templates/about.html")
+
+@app.route('/help/faq')
+def faq():
+    return render_template("help_templates/faq.html")
+
+@app.route('/help/returns')
+def returns():
+    return render_template("help_templates/returns.html")
+
+@app.route('/help/contact')
+def contact():
+    return render_template("help_templates/contact.html")
+
+@app.route('/help/privacy')
+def privacy():
+    return render_template("help_templates/privacy.html")
+
+
+
 
 
 
