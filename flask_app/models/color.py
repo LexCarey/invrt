@@ -36,3 +36,9 @@ class Color():
         mysql = connectToMySQL("invrt_schema")
         query = "SELECT * FROM colors WHERE color = %(color)s;"
         return mysql.query_db(query, data)
+
+    @classmethod
+    def get_color_by_product_id_and_name(cls, data):
+        mysql = connectToMySQL("invrt_schema")
+        query = "SELECT * FROM colors WHERE product_id = %(product_id)s and color = %(color)s;"
+        return mysql.query_db(query, data)

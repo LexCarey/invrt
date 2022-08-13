@@ -65,32 +65,47 @@ def add_cart():
         session['cart_total'] = "{:.2f}".format(0.00)
     if 'cart_id_counter' not in session:
         session['cart_id_counter'] = 0
-    product = request.form["name"]
+
+    if request.form["size"] != "XS" and request.form["size"] != "S" and request.form["size"] != "M" and request.form["size"] != "L" and request.form["size"] != "XL":
+        flash('Error adding to cart.', 'cart_error')
+        return redirect("/cart")
+    product = Product.get_product_by_name({"name": request.form["name"]})
+    if product == []:
+        flash('Error adding to cart.', 'cart_error')
+        return redirect("/cart")
+    color = Color.get_color_by_product_id_and_name({"color": request.form["color"], "product_id": product[0].id})
+    if not color:
+        flash('Error adding to cart.', 'cart_error')
+        return redirect("/cart")
+    if int(request.form["quantity"]) > color[0][request.form["size"] + "_stock"] or int(request.form["quantity"])==0:
+        flash('Error adding to cart.', 'cart_error')
+        return redirect("/cart")
+    color=color[0]
+    product=product[0]
     cart_list = session['cart']
     add_to_cart_flag = True
     for item in cart_list:
-        if item["name"] == product and item["color"] == request.form["color"] and item["size"] == request.form["size"]:
+        if item["name"] == product.name and item["color"] == color["color"] and item["size"] == request.form["size"]:
             item["quantity"] = int(item["quantity"]) + int(request.form["quantity"])
             add_to_cart_flag = False
     if add_to_cart_flag:
-        color = Color.get_color_by_name({"color": request.form["color"]})[0]
         back_preview = Picture.get_pictures_by_color_id({"color_id": color["id"]})[0].picture_link
         print("COLOR SIZE LINK VVVVV")
         print(color[request.form["size"] + "_link"])
         cart_list.append({
-            "name": product,
-            "color": request.form["color"],
+            "name": product.name,
+            "color": color["color"],
             "size": request.form["size"],
             "size_stock": color[request.form["size"] + "_stock"],
             "quantity": int(request.form["quantity"]),
             "picture": back_preview,
             "stripe_link": color[request.form["size"] + "_link"],
             "cart_id": session['cart_id_counter'],
-            "price": request.form["price"]
+            "price": product.price
         })
     session['cart_id_counter'] = session['cart_id_counter'] + 1
     session["cart"]=cart_list
-    session["cart_total"] = "{:.2f}".format(float(session["cart_total"]) + (float(request.form["price"]) * int(request.form["quantity"])))
+    session["cart_total"] = "{:.2f}".format(float(session["cart_total"]) + (float(product.price) * int(request.form["quantity"])))
     print(session["cart"])
     return redirect('/cart')
 

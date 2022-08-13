@@ -66,6 +66,11 @@
         <div style="flex: 1;">
             <h1 class="your-cart">Your Cart:</h1>
             <h1 class="cart_total">Total: ${{cart_total}}</h1>
+            {% with messages = get_flashed_messages(category_filter=['cart_error']) %}
+                    {% for message in messages %}
+                        <h1 class="text-center">{{message}}</h1>
+                    {% endfor %}
+                {% endwith %}
             {% for products in cart %}
             <div class="in-cart align-center justify-between text-center">
                 <div class="left-cart flex align-center text-center">
