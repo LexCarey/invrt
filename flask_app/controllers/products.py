@@ -24,10 +24,6 @@ def page_not_found(e):
 def about():
     return render_template("help_templates/about.html")
 
-@app.route('/help/faq')
-def faq():
-    return render_template("help_templates/faq.html")
-
 @app.route('/help/returns')
 def returns():
     return render_template("help_templates/returns.html")
