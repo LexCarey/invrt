@@ -71,6 +71,7 @@
                 {% for picture in pictures[0] %}
                     <img onclick="changeMain(this)" id="{{picture.name}}" src="../static/{{picture.picture_link}}" alt="">
                 {% endfor %}
+                {% if pictures[0][3] is undefined %} <img style="display:none" onclick="changeMain(this)" id="ModelBack" alt=""> <img style="display:none" onclick="changeMain(this)" id="ModelFront" alt=""> {% endif %}
             </div>
         </div>
         <div class="options flex justify-between wrap">
@@ -82,11 +83,13 @@
                 <h2>${{products[0].price}}</h2>
                 <form action="/add-cart" method="post">
                     <input type="hidden" name="name" value="{{products[0].name}}">
-                    <div class="flex align-center">
+                    <div class="flex align-center colors">
                         {% set count = namespace(value=0) %}
                         {% for color in colors %}
-                        <input style="background-color: {{color.hex}};" type="radio" name="color" value="{{color.color}}" onclick="changeColor('{{colors[count.value].XS_stock}}', '{{colors[count.value].S_stock}}', '{{colors[count.value].M_stock}}', '{{colors[count.value].L_stock}}', '{{colors[count.value].XL_stock}}', '../static/{{pictures[count.value][0].picture_link}}', '../static/{{pictures[count.value][1].picture_link}}', '../static/{{pictures[count.value][2].picture_link}}')" {% if count.value == 0 %} checked {% endif %}>
-                        <label for="color">{{color.color}}</label>
+                        <div>
+                            <input style="background-color: {{color.hex}};" type="radio" name="color" value="{{color.color}}" onclick="changeColor('{{colors[count.value].XS_stock}}', '{{colors[count.value].S_stock}}', '{{colors[count.value].M_stock}}', '{{colors[count.value].L_stock}}', '{{colors[count.value].XL_stock}}' {% for picture in pictures[count.value] %} , '../static/{{picture.picture_link}}' {% endfor %} )" {% if count.value == 0 %} checked {% endif %}>
+                            <label for="color">{{color.color}}</label>
+                        </div>
                         {% set count.value = count.value + 1 %}
                         {% endfor %}
                     </div>
@@ -142,3 +145,5 @@
     <script src="{{ url_for('static', filename='/js/script.js') }}"></script>
 </body>
 </html>
+
+

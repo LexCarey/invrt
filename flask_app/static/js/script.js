@@ -2,8 +2,8 @@ main = document.getElementById("main_image");
 front = document.getElementById("Front");
 back = document.getElementById("Back");
 design = document.getElementById("Design");
-extra1 = document.getElementById("Extra_Img1");
-extra2 = document.getElementById("Extra_Img2");
+modelback = document.getElementById("ModelBack");
+modelfront = document.getElementById("ModelFront");
 xsbutton = document.getElementById("xs");
 sbutton = document.getElementById("s");
 mbutton = document.getElementById("m");
@@ -20,16 +20,24 @@ const changeMain = (element) => {
     main.src = element.src;
 }
 
-const changeColor = (xs, s, m, l, xl, back_img, front_img, design_img, extra_img1=null, extra_img2=null) =>{
+const changeColor = (xs, s, m, l, xl, back_img, front_img, design_img, modelback_img=null, modelfront_img=null) =>{
     main.src = back_img;
     front.src = front_img;
     back.src = back_img;
     design.src = design_img;
-    if (extra_img1!=null){
-        extra_img1.src = extra_img1
+    if (modelback_img == null){
+        modelback.src = null
+        modelback.style.display = "none"
+    } else {
+        modelback.src = modelback_img
+        modelback.style.display = "block"
     }
-    if (extra_img2!=null){
-        extra_img2.src = extra_img2
+    if (modelfront_img == null){
+        modelfront.src = null
+        modelfront.style.display = "none"
+    } else {
+        modelfront.src = modelfront_img
+        modelfront.style.display = "block"
     }
     xsbutton.onclick = function() {changeSize(xs)}
     if (xsbutton.checked) {
