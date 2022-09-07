@@ -132,6 +132,7 @@ def remove_from_cart(num):
 def update_cart(num):
     if request.form["quantity"] == '0':
         return redirect('/remove_from_cart/' + str(num))
+    
     cart_list = session['cart']
     for item in cart_list:
         if item["cart_id"] == num:

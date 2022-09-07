@@ -11,6 +11,31 @@ lbutton = document.getElementById("l");
 xlbutton = document.getElementById("xl");
 addcart = document.getElementById("AddCartButton");
 menu = document.getElementById("side-menu");
+quantity = document.getElementById("quantity");
+
+const updateQuantity = (amount) => {
+    var i, L = quantity.options.length - 1;
+    for(i = L; i >= 0; i--) {
+        quantity.remove(i);
+    }
+    if (amount>0) {
+        for (let j = 1; j<=amount; j++){
+            var opt = document.createElement('option');
+            opt.value = j;
+            opt.innerHTML = j;
+            quantity.appendChild(opt);
+        }
+        addcart.value = "Add To Cart"
+        addcart.disabled = false
+    } else {
+        var opt = document.createElement('option');
+        opt.value = 0;
+        opt.innerHTML = 0;
+        quantity.appendChild(opt);
+        addcart.value = "Size Sold Out"
+        addcart.disabled = true
+    }
+}
 
 const changeView = (element, img) => {
     element.src = img;
@@ -39,25 +64,25 @@ const changeColor = (xs, s, m, l, xl, back_img, front_img, design_img, modelback
         modelfront.src = modelfront_img
         modelfront.style.display = "block"
     }
-    xsbutton.onclick = function() {changeSize(xs)}
+    xsbutton.onclick = function() {updateQuantity(xs)}
     if (xsbutton.checked) {
-        changeSize(xs)
+        updateQuantity(xs)
     }
-    sbutton.onclick = function() {changeSize(s)}
+    sbutton.onclick = function() {updateQuantity(s)}
     if (sbutton.checked) {
-        changeSize(s)
+        updateQuantity(s)
     }
-    mbutton.onclick = function() {changeSize(m)}
+    mbutton.onclick = function() {updateQuantity(m)}
     if (mbutton.checked) {
-        changeSize(m)
+        updateQuantity(m)
     }
-    lbutton.onclick = function() {changeSize(l)}
+    lbutton.onclick = function() {updateQuantity(l)}
     if (lbutton.checked) {
-        changeSize(l)
+        updateQuantity(l)
     }
-    xlbutton.onclick = function() {changeSize(xl)}
+    xlbutton.onclick = function() {updateQuantity(xl)}
     if (xlbutton.checked) {
-        changeSize(xl)
+        updateQuantity(xl)
     }
 
 }

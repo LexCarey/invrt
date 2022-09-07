@@ -83,7 +83,11 @@
                         <form action="/update_cart/{{products.cart_id}}" method="post">
                         <div class="flex">
                             <p>Quantity:</p>
-                            <input type="number" name="quantity" value="{{products.quantity}}" min="0" max="{{products.size_stock}}">
+                            <select name="quantity" id="quantity">
+                                {% for n in range(products.size_stock+1) %}
+                                    <option {% if n == products.quantity %} selected="selected" {% endif %} value="{{n}}">{{n}}</option>
+                                {% endfor %}
+                            </select>
                         </div>
                         <div class="update-remove flex align-center text-center">
                             <input type="submit" value="Update">
