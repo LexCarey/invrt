@@ -225,9 +225,8 @@ footer img{
 
 /* About/Upcoming */
 .content{
-    padding-top: 200px;
     margin: 0 auto;
-    width: 850px;
+    padding: 200px 10% 0px;
     font-size: 1.55em;
 }
 
@@ -316,7 +315,7 @@ footer img{
 }
 
 .purple-button{
-    font-size: 30px;
+    font-size: 1.3em;
     color: white;
     background-color: rgb(103, 90, 172);
     padding: 10px 67px;
@@ -385,6 +384,24 @@ footer img{
     flex-wrap: wrap;
 }
 
+.sizes{
+    flex-wrap: wrap;
+}
+
+.size-chart{
+    margin-top: 100px;
+    border-bottom: 1.5px solid rgb(215, 215, 215);
+    cursor: pointer;
+    font-size: 1.2em;
+    flex-direction: column;
+}
+
+.size-chart img{
+    margin-top: 10px;
+    width: 95%;
+    display: none;
+}
+
 /* Cart */
 
 .in-cart{
@@ -405,7 +422,6 @@ footer img{
     border: none;
     border-bottom: 2px solid rgb(179, 179, 179);
     outline: none !important;
-    font-size: 18px;
 }
 
 .in-cart p{
@@ -519,10 +535,6 @@ footer img{
         height: 50vw;
         width: 50vw;
     }
-    .product{
-        padding-right: 5vw;
-        padding-left: 5vw;
-    }
     .clothing-display{
         font-size: .9em;
     }
@@ -570,7 +582,10 @@ footer img{
     .menu-open{
         transform: translateX(-275px);
     }
-}
+    .size-chart{
+        width: auto;
+        margin: 40px 10vw 0;
+    }
 
 
 @media (max-width: 550px){
@@ -632,5 +647,11 @@ footer img{
     }
     .help ul{
         width: 100%;
+    }
+    .content{
+        font-size: 1.25em;
+    }
+    .purple-button{
+        font-size: 1em;
     }
 }

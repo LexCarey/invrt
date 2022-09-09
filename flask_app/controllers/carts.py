@@ -130,14 +130,17 @@ def remove_from_cart(num):
 
 @app.route('/update_cart/<int:num>', methods=['POST'])
 def update_cart(num):
-    if request.form["quantity"] == '0':
+    if request.form["quantity"] <= '0':
         return redirect('/remove_from_cart/' + str(num))
-    
     cart_list = session['cart']
     for item in cart_list:
         if item["cart_id"] == num:
+            if int(request.form["quantity"]) > item["size_stock"]:
+                newQuantity = item["size_stock"]
+            else:
+                newQuantity = int(request.form["quantity"])
             session['cart_total'] = "{:.2f}".format(float(session['cart_total']) - (float(item["price"]) * int(item["quantity"])))
-            item['quantity'] = int(request.form["quantity"])
-            session["cart_total"] = "{:.2f}".format(float(session["cart_total"]) + (float(item["price"]) * int(request.form["quantity"])))
+            item['quantity'] = int(newQuantity)
+            session["cart_total"] = "{:.2f}".format(float(session["cart_total"]) + (float(item["price"]) * int(newQuantity)))
     session['cart'] = cart_list
     return redirect('/cart')

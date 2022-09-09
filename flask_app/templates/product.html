@@ -56,71 +56,87 @@
         </a>
         <a class="flex align-center" href="/cart">
             <div class="menu-option flex align-center smaller">
-                    <img src="{{ url_for('static', filename='/all_imgs/cart2.png') }}" alt="Cart">
+                    <img src="{{ url_for('static', filename='/all_imgs/cart_dark.png') }}" alt="Cart">
             </div>
         </a>
     </div>
 
     <!-- Product -->
-    <div class="container flex product">
-        <div class="photos">
-            <div class="large-photo flex align-center justify-center">
-                <img id="main_image" src="../static/{{pictures[0][0].picture_link}}" alt="">
+    <div class="container">
+        <div class="flex product">
+            <div class="photos">
+                <div class="large-photo flex align-center justify-center">
+                    <img id="main_image" src="../static/{{pictures[0][0].picture_link}}" alt="">
+                </div>
+                <div class="small-photos flex">
+                    {% for picture in pictures[0] %}
+                        <img onclick="changeMain(this)" id="{{picture.name}}" src="../static/{{picture.picture_link}}" alt="">
+                    {% endfor %}
+                    {% if pictures[0][3] is undefined %} <img style="display:none" onclick="changeMain(this)" id="ModelBack" alt=""> <img style="display:none" onclick="changeMain(this)" id="ModelFront" alt=""> {% endif %}
+                </div>
             </div>
-            <div class="small-photos flex">
-                {% for picture in pictures[0] %}
-                    <img onclick="changeMain(this)" id="{{picture.name}}" src="../static/{{picture.picture_link}}" alt="">
-                {% endfor %}
-                {% if pictures[0][3] is undefined %} <img style="display:none" onclick="changeMain(this)" id="ModelBack" alt=""> <img style="display:none" onclick="changeMain(this)" id="ModelFront" alt=""> {% endif %}
+            <div class="options flex justify-between wrap">
+                <div class="name-desc">
+                    <h1>{{products[0].name}}</h1>
+                    <p>{{products[0].description}}</p>
+                </div>
+                <div class="color-size-etc">
+                    <h2>${{products[0].price}}</h2>
+                    <form action="/add-cart" method="post">
+                        <input type="hidden" name="name" value="{{products[0].name}}">
+                        <div class="flex align-center colors">
+                            {% set count = namespace(value=0) %}
+                            {% for color in colors %}
+                            <div class="flex align-center">
+                                <input style="background-color: {{color.hex}};" type="radio" name="color" value="{{color.color}}" onclick="changeColor('{{colors[count.value].XS_stock}}', '{{colors[count.value].S_stock}}', '{{colors[count.value].M_stock}}', '{{colors[count.value].L_stock}}', '{{colors[count.value].XL_stock}}' {% for picture in pictures[count.value] %} , '../static/{{picture.picture_link}}' {% endfor %} )" {% if count.value == 0 %} checked {% endif %}>
+                                <label for="color">{{color.color}}</label>
+                            </div>
+                            {% set count.value = count.value + 1 %}
+                            {% endfor %}
+                        </div>
+                        <div class="flex align-center sizes">
+                            <div class="flex align-center">
+                                <input id="xs" type="radio" name="size" value="XS" onclick="updateQuantity({{colors[0].XS_stock}})">
+                                <label for="size">XS</label>
+                            </div>
+                            <div class="flex align-center">
+                                <input id="s" type="radio" name="size" value="S" onclick="updateQuantity({{colors[0].S_stock}})">
+                                <label for="size">S</label>
+                            </div>
+                            <div class="flex align-center">
+                                <input id="m" type="radio" name="size" value="M" onclick="updateQuantity({{colors[0].M_stock}})" checked>
+                                <label for="size">M</label>
+                            </div>
+                            <div class="flex align-center">
+                                <input id="l" type="radio" name="size" value="L" onclick="updateQuantity({{colors[0].L_stock}})">
+                                <label for="size">L</label>
+                            </div>
+                            <div class="flex align-center">
+                                <input id="xl" type="radio" name="size" value="XL" onclick="updateQuantity({{colors[0].XL_stock}})">
+                                <label for="size">XL</label>
+                            </div>
+                        </div>
+                        <div class="flex align-center quantity">
+                            <label for="quantity">Quantity:</label>
+                            <select name="quantity" id="quantity">
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                        <input type="hidden" name="color" value="">
+                        <input type="hidden" name="size" value="">
+                        <input class="purple-button" id="AddCartButton" type="submit" {% if colors[0].M_stock > 0 %} value="Add To Cart" {% else %} value="Size Sold Out" disabled {% endif %}>
+                    </form>
+                    {% with messages = get_flashed_messages(category_filter=['product']) %}
+                        {% for message in messages %}
+                            {{message}}
+                        {% endfor %}
+                    {% endwith %}
+                </div>
             </div>
         </div>
-        <div class="options flex justify-between wrap">
-            <div class="name-desc">
-                <h1>{{products[0].name}}</h1>
-                <p>{{products[0].description}}</p>
-            </div>
-            <div class="color-size-etc">
-                <h2>${{products[0].price}}</h2>
-                <form action="/add-cart" method="post">
-                    <input type="hidden" name="name" value="{{products[0].name}}">
-                    <div class="flex align-center colors">
-                        {% set count = namespace(value=0) %}
-                        {% for color in colors %}
-                        <div>
-                            <input style="background-color: {{color.hex}};" type="radio" name="color" value="{{color.color}}" onclick="changeColor('{{colors[count.value].XS_stock}}', '{{colors[count.value].S_stock}}', '{{colors[count.value].M_stock}}', '{{colors[count.value].L_stock}}', '{{colors[count.value].XL_stock}}' {% for picture in pictures[count.value] %} , '../static/{{picture.picture_link}}' {% endfor %} )" {% if count.value == 0 %} checked {% endif %}>
-                            <label for="color">{{color.color}}</label>
-                        </div>
-                        {% set count.value = count.value + 1 %}
-                        {% endfor %}
-                    </div>
-                    <div class="flex align-center sizes">
-                        <input id="xs" type="radio" name="size" value="XS" onclick="updateQuantity({{colors[0].XS_stock}})">
-                        <label for="size">XS</label>
-                        <input id="s" type="radio" name="size" value="S" onclick="updateQuantity({{colors[0].S_stock}})">
-                        <label for="size">S</label>
-                        <input id="m" type="radio" name="size" value="M" onclick="updateQuantity({{colors[0].M_stock}})" checked>
-                        <label for="size">M</label>
-                        <input id="l" type="radio" name="size" value="L" onclick="updateQuantity({{colors[0].L_stock}})">
-                        <label for="size">L</label>
-                        <input id="xl" type="radio" name="size" value="XL" onclick="updateQuantity({{colors[0].XL_stock}})">
-                        <label for="size">XL</label>
-                    </div>
-                    <div class="flex align-center quantity">
-                        <label for="quantity">Quantity:</label>
-                        <select name="quantity" id="quantity">
-                            <option value="1">1</option>
-                        </select>
-                    </div>
-                    <input type="hidden" name="color" value="">
-                    <input type="hidden" name="size" value="">
-                    <input class="purple-button" id="AddCartButton" type="submit" {% if colors[0].M_stock > 0 %} value="Add To Cart" {% else %} value="Size Sold Out" disabled {% endif %}>
-                </form>
-                {% with messages = get_flashed_messages(category_filter=['product']) %}
-                    {% for message in messages %}
-                        {{message}}
-                    {% endfor %}
-                {% endwith %}
-            </div>
+        <div class="flex align-center justify-center size-chart menu-option" onclick="sizeChart()">
+            <p>Size Chart</p>
+            <img id="size-chart" src="../static/all_imgs/size_chart.jpg" alt="">
         </div>
     </div>
 

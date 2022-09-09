@@ -124,3 +124,12 @@ const openmenu = () => {
 const closemenu = () => {
     menu.classList.remove("menu-open")
 }
+
+const sizeChart = () => {
+    chart = document.getElementById("size-chart");
+    if (chart.style.display == "none") {
+        chart.style.display = "block"
+    } else {
+        chart.style.display = "none"
+    }
+}
