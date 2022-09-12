@@ -66,6 +66,7 @@ def upcoming():
 
 @app.route('/products/<product>')
 def product(product):
+    
     products = Product.get_product_by_name({ "name": product })
     colors = Color.get_colors_by_product_id({"product_id": products[0].id})
     pictures = []
