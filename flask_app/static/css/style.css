@@ -553,7 +553,7 @@ footer img{
     .photos{
         display: block;
         justify-content: center;
-        padding: 0 10vw;
+        padding: 0 5vw;
     }
     .small-photos{
         justify-content: space-between;
@@ -565,7 +565,7 @@ footer img{
         width: auto;
     }
     .options{
-        padding: 0 10vw;
+        padding: 0 5vw;
     }
     .name-desc{
         padding-bottom: 20px;
@@ -586,7 +586,7 @@ footer img{
         width: auto;
         margin: 40px 10vw 0;
     }
-
+}
 
 @media (max-width: 550px){
     .clothing{
