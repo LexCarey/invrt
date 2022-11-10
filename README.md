@@ -53,8 +53,6 @@
 ## About The Project
 Invrt is a bay area clothing brand designed by one of my closest friends, Alex Brodeur. I created this website to give his brand the ability to expand into the online market. Anybody can visit the site and purchase an item (as long as it's in stock!). 
 
-WARNING: Most features require an exact copy of my database (which I don't have publically available), meaning a majority of the functions will not work on your local host. I reccomend checking out the <a href="https://invrtofficial.com/">live site</a> if you'd like to see everything in action.
-
 ### Built With
 
 * Python
@@ -69,6 +67,8 @@ WARNING: Most features require an exact copy of my database (which I don't have 
 
 <!-- GETTING STARTED -->
 ## Getting Started
+
+WARNING: Most features require an exact copy of my database (which I don't have publically available), meaning a majority of the functions will not work on your local host. I reccomend checking out the <a href="https://invrtofficial.com/">live site</a> if you'd like to see everything in action.
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
