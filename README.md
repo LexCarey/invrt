@@ -107,6 +107,10 @@ This is an example of how to list things you need to use the software and how to
 
 ![](flask_app/static/all_imgs/readme_display.gif)
 
+### Adding to Cart:
+
+![](flask_app/static/all_imgs/readme_cart.gif)
+
 ### Checking out:
 
 ![](flask_app/static/all_imgs/readme_checkout.gif)
