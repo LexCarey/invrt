@@ -174,14 +174,3 @@ Project Link: [https://github.com/LexCarey/invrt](https://github.com/LexCarey/in
 Live Link: [https://invrtofficial.com/](https://invrtofficial.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
