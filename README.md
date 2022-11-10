@@ -95,11 +95,12 @@ _Below is an example of how you can instruct your audience on installing and set
 1. Get 2 free API Keys (public and secret) at [https://stripe.com](https://stripe.com/)
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/LexCarey/invrt.git
    ```
-3. Install NPM packages
+3. Create file `creds.py` in folder `flask_app`
    ```sh
-   npm install
+   cd flask_app
+   type nul > creds.py
    ```
 4. Enter your API keys in `creds.py`
    ```py
