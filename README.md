@@ -55,11 +55,11 @@ Invrt is a bay area clothing brand designed by one of my closest friends, Alex B
 
 ### Built With
 
-* Python
-* Flask
-* Jinja2
-* SQL
-* Stripe API
+* [Python](https://www.python.org/)
+* [Flask](https://flask.palletsprojects.com/en/2.2.x/)
+* [Jinja2](https://jinja.palletsprojects.com/en/3.1.x/)
+* [MySQL](https://www.mysql.com/)
+* [Stripe API](https://stripe.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -68,10 +68,9 @@ Invrt is a bay area clothing brand designed by one of my closest friends, Alex B
 <!-- GETTING STARTED -->
 ## Getting Started
 
-WARNING: Most features require an exact copy of my database (which I don't have publically available), meaning a majority of the functions will not work on your local host. I reccomend checking out the <a href="https://invrtofficial.com/">live site</a> if you'd like to see everything in action.
+WARNING: Most features require an exact copy of my database structure (which I don't have publically available), meaning a majority of the functions will not work on your local copy. I reccomend checking out the <a href="https://invrtofficial.com/">live site</a> if you'd like to see everything in action.
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+If you would still like to run a local copy, you can follow the steps below.
 
 ### Prerequisites
 
