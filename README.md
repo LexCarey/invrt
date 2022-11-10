@@ -103,9 +103,9 @@ This is an example of how to list things you need to use the software and how to
 <!-- DEMOS EXAMPLES -->
 ## Demos
 
-### Adding to cart:
+### Browsing Items:
 
-![](flask_app/static/all_imgs/readme_cart.gif)
+![](flask_app/static/all_imgs/readme_display.gif)
 
 ### Checking out:
 
