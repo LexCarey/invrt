@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/LexCarey/invrt">
-    <img src="" alt="Logo" width="auto" height="80">
+    <img src="flask_app/static/all_imgs/Invrt_Logo.jpg" alt="Logo" width="auto" height="80">
   </a>
 
 <h3 align="center">INVRT</h3>
