@@ -7,7 +7,7 @@
 <h3 align="center">INVRT</h3>
 
   <p align="center">
-    <a target="_blank" href="https://invrtofficial.com/">INVRT</a> is a fully operational E-Commerce clothing website.
+    INVRT is a fully operational E-Commerce clothing website.
     <br />
     <a href="https://github.com/LexCarey/invrt"><strong>Explore the docs »</strong></a>
     <br />
