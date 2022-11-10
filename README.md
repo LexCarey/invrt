@@ -41,7 +41,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#demo">Demo</a></li>
+    <li><a href="#demos">Demos</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -100,8 +100,8 @@ This is an example of how to list things you need to use the software and how to
 
 
 
-<!-- DEMO EXAMPLES -->
-## Demo
+<!-- DEMOS EXAMPLES -->
+## Demos
 
 Below are a few gifs of integral features of the Invrt website:
 
