@@ -51,7 +51,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Invrt is a bay area clothing brand designed by one of my closest friends, Alex Brodeur. I created this website to give him the ability to expand into the online clothing market. I did this by 
+Invrt is a bay area clothing brand designed by one of my closest friends, Alex Brodeur. I created this website to give him the ability to expand into the online clothing market.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -64,6 +64,7 @@ Invrt is a bay area clothing brand designed by one of my closest friends, Alex B
 * Flask
 * Jinja2
 * SQL
+* Stripe API
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
