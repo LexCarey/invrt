@@ -34,13 +34,6 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
     <li><a href="#demos">Demos</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -53,6 +46,7 @@
 ## About The Project
 Invrt is a bay area clothing brand designed by one of my closest friends, Alex Brodeur. I created this website to give his brand the ability to expand into the online market. Anybody can visit the site and purchase an item (as long as it's in stock!). 
 
+WARNING: Most features require an exact copy of my database (which I don't have publically available), meaning a majority of the functions will not work on your local host. I reccomend checking out the <a href="https://invrtofficial.com/">Live Site</a>.
 
 ### Built With
 
@@ -61,42 +55,6 @@ Invrt is a bay area clothing brand designed by one of my closest friends, Alex B
 * Jinja2
 * SQL
 * Stripe API
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-WARNING: Most features require an exact copy of my database (which I don't have publically available), meaning a majority of the functions will not work on your local host. I reccomend checking out the <a href="https://invrtofficial.com/">Live Site</a>.
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/LexCarey/invrt.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
