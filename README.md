@@ -165,9 +165,11 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@AkuaDrowned](https://twitter.com/AkuaDrowned) - lexcarey73@gmail.com
+Lexington Carey - [@AkuaDrowned](https://twitter.com/AkuaDrowned) - lexcarey73@gmail.com
 
 Project Link: [https://github.com/LexCarey/invrt](https://github.com/LexCarey/invrt)
+
+Live Link: [https://invrtofficial.com/](https://invrtofficial.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
