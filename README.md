@@ -55,6 +55,7 @@ Invrt is a bay area clothing brand designed by one of my closest friends, Alex B
 
 ![](flask_app/static/all_imgs/readme_cart.gif)
 
+![](flask_app/static/all_imgs/readme_checkout.gif)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
