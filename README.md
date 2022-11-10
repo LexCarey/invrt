@@ -116,7 +116,15 @@ This is an example of how to list things you need to use the software and how to
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+### Adding to cart:
+
+![](flask_app/static/all_imgs/readme_cart.gif)
+
+### Checking out:
+
+![](flask_app/static/all_imgs/readme_checkout.gif)
+
+_You can check out the site here if you would like to test any features for yourself [Live Site](https://invrtofficial.com/)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
