@@ -51,11 +51,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<video width="320" height="240" controls>
-  <source src="https://lexingtoncarey.com/static/media/INVRT_Demo.2f4d9ec17c58e5a01225.mp4" type="video/mp4">
-</video>
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
