@@ -103,8 +103,6 @@ This is an example of how to list things you need to use the software and how to
 <!-- DEMOS EXAMPLES -->
 ## Demos
 
-Below are a few gifs of integral features of the Invrt website:
-
 ### Adding to cart:
 
 ![](flask_app/static/all_imgs/readme_cart.gif)
