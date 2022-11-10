@@ -107,6 +107,8 @@ _Below is an example of how you can instruct your audience on installing and set
    STRIPE_PUBLIC_KEY = 'ENTER YOUR PUBLIC API KEY'
    STRIPE_SECRET_KEY = 'ENTER YOUR SECRET API KEY'
    ```
+   
+Once you are done with these steps, you will be ready to run the project!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
