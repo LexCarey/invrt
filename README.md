@@ -125,10 +125,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Create a more inviting & interactive home page.
+- [ ] Update "Current Drop" tab to "Current Drops" tab, letting all in stock drops show up instead of just the most recent drop.
+- [ ] Add support for more clothing items:
+    - [ ] Hats
 
 See the [open issues](https://github.com/LexCarey/invrt/issues) for a full list of proposed features (and known issues).
 
