@@ -139,7 +139,7 @@ See the [open issues](https://github.com/LexCarey/invrt/issues) for a full list 
 <!-- CONTACT -->
 ## Contact
 
-Lexington Carey - [@AkuaDrowned](https://twitter.com/AkuaDrowned) - lexcarey73@gmail.com
+Lexington Carey - Twitter [@AkuaDrowned](https://twitter.com/AkuaDrowned) - [LinkedIn](https://twitter.com/AkuaDrowned) - lexcarey73@gmail.com
 
 Project Link: [https://github.com/LexCarey/invrt](https://github.com/LexCarey/invrt)
 
