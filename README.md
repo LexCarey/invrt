@@ -78,9 +78,9 @@ If you would still like to run a local copy, you can follow the steps below.
 
   [Python Download](https://www.python.org/downloads/)
 
-* npm
+* Flask
   ```sh
-  npm install npm@latest -g
+  pip install Flask
   ```
 
 ### Installation
