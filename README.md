@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/LexCarey/invrt">
-    <img src="https://invrtofficial.com/static//all_imgs/Invrt_Logo.jpg" alt="Logo" width="auto" height="80">
+    <img src="" alt="Logo" width="auto" height="80">
   </a>
 
 <h3 align="center">INVRT</h3>
@@ -51,7 +51,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
+Invrt is a bay area clothing brand designed by one of my closest friends, Alex Brodeur. I created this website to give him the ability to expand into the online clothing market. He gave me a great amount of creative freedom and I did my best to make the site look clean, while also having a distinct style. 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
