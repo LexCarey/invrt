@@ -74,7 +74,9 @@ If you would still like to run a local copy, you can follow the steps below.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+* Python
+[Python Download](https://www.python.org/downloads/)
+
 * npm
   ```sh
   npm install npm@latest -g
