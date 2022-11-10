@@ -127,7 +127,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 - [ ] Create a more inviting & interactive home page.
 - [ ] Update "Current Drop" tab to "Current Drops" tab, letting all in stock drops show up instead of just the most recent drop.
-- [ ] Show a product is soldout on drop tabs.
+- [ ] Show that a product is soldout on the drop tab instead of just the individual product page.
 - [ ] Add support for more clothing items:
     - [ ] Hats
 
