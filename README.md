@@ -75,6 +75,7 @@ If you would still like to run a local copy, you can follow the steps below.
 ### Prerequisites
 
 * Python
+
 [Python Download](https://www.python.org/downloads/)
 
 * npm
