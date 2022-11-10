@@ -82,6 +82,11 @@ If you would still like to run a local copy, you can follow the steps below.
   ```sh
   pip install Flask
   ```
+  
+* Jinja2
+  ```sh
+  pip install Jinja2
+  ```
 
 ### Installation
 
