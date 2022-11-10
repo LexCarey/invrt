@@ -46,7 +46,7 @@
 ## About The Project
 Invrt is a bay area clothing brand designed by one of my closest friends, Alex Brodeur. I created this website to give his brand the ability to expand into the online market. Anybody can visit the site and purchase an item (as long as it's in stock!). 
 
-WARNING: Most features require an exact copy of my database (which I don't have publically available), meaning a majority of the functions will not work on your local host. I reccomend checking out the <a href="https://invrtofficial.com/">Live Site</a>.
+WARNING: Most features require an exact copy of my database (which I don't have publically available), meaning a majority of the functions will not work on your local host. I reccomend checking out the <a href="https://invrtofficial.com/">Live Site</a> if you'd like to see the site in action.
 
 ### Built With
 
