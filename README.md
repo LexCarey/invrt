@@ -68,7 +68,7 @@ Invrt is a bay area clothing brand designed by one of my closest friends, Alex B
 <!-- GETTING STARTED -->
 ## Getting Started
 
-WARNING: Most features require an exact copy of my database structure (which I don't have publically available), meaning a majority of the functions will not work on your local copy. I reccomend checking out the <a href="https://invrtofficial.com/">live site</a> if you'd like to see everything in action.
+Important: Most features require an exact copy of my database structure (which I don't have publically available), meaning a majority of the functions will not work on your local copy. I reccomend checking out the <a href="https://invrtofficial.com/">live site</a> if you'd like to see everything in action.
 
 If you would still like to run a local copy, you can follow the steps below.
 
