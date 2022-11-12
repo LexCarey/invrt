@@ -90,8 +90,6 @@ If you would still like to run a local copy, you can follow the steps below.
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
 1. Get 2 free API Keys (public and secret) at [https://stripe.com](https://stripe.com/)
 2. Clone the repo
    ```sh
