@@ -123,6 +123,8 @@ If you would still like to run a local copy, you can follow the steps below.
    ```sh
    py server.py
    ```
+   
+Your local copy should now be running on [http://localhost:5000/](http://localhost:5000/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
