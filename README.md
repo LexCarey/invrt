@@ -88,7 +88,7 @@ If you would still like to run a local copy, you can follow the steps below.
   pip install Jinja2
   ```
   
-* Clone the repo
+* Repo
    ```sh
    git clone https://github.com/LexCarey/invrt.git
    ```
