@@ -38,7 +38,8 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#stripe-install">Stripe Install</a></li>
+        <li><a href="#run-project">Run Project</a></li>
       </ul>
     </li>
     <li><a href="#demos">Demos</a></li>
