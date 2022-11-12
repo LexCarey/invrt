@@ -106,6 +106,22 @@ If you would still like to run a local copy, you can follow the steps below.
    STRIPE_PUBLIC_KEY = 'ENTER YOUR PUBLIC API KEY'
    STRIPE_SECRET_KEY = 'ENTER YOUR SECRET API KEY'
    ```
+   
+### Run Project
+
+1. Navigate to folder `invrt`
+2. Open shell
+   ```sh
+   pipenv shell
+   ```
+   OR
+   ```sh
+   py -m pipenv shell
+   ```
+3. Run file `server.py`
+   ```sh
+   py server.py
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
