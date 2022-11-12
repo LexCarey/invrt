@@ -107,7 +107,7 @@ If you would still like to run a local copy, you can follow the steps below.
    STRIPE_SECRET_KEY = 'ENTER YOUR SECRET API KEY'
    ```
    
-Once you are done with these steps, you will be ready to run the project!
+   Once you are done with these steps, you will be ready to run the project!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
