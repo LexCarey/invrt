@@ -87,20 +87,21 @@ If you would still like to run a local copy, you can follow the steps below.
   ```sh
   pip install Jinja2
   ```
-
-### Installation
-
-1. Get 2 free API Keys (public and secret) at [https://stripe.com](https://stripe.com/)
-2. Clone the repo
+  
+* Clone the repo
    ```sh
    git clone https://github.com/LexCarey/invrt.git
    ```
-3. Create file `creds.py` in folder `flask_app`
+
+### Stripe Install
+
+1. Get 2 free API Keys (public and secret) at [https://stripe.com](https://stripe.com/)
+2. Create file `creds.py` in folder `flask_app`
    ```sh
    cd flask_app
    type nul > creds.py
    ```
-4. Enter your API keys in `creds.py`
+3. Enter your API keys in `creds.py`
    ```py
    STRIPE_PUBLIC_KEY = 'ENTER YOUR PUBLIC API KEY'
    STRIPE_SECRET_KEY = 'ENTER YOUR SECRET API KEY'
