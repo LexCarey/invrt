@@ -114,7 +114,8 @@ If you would still like to run a local copy, you can follow the steps below.
    ```sh
    pipenv shell
    ```
-   OR
+   **OR**
+   
    ```sh
    py -m pipenv shell
    ```
