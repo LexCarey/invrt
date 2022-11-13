@@ -65,7 +65,7 @@
     <div class="container cart-page flex">
         <div style="flex: 1;">
             <h1 class="your-cart">Your Cart:</h1>
-            <h1 class="cart_total">Total: ${{cart_total}}</h1>
+            <h1 class="cart_total">Sub-Total: ${{cart_total}}</h1>
             {% with messages = get_flashed_messages(category_filter=['cart_error']) %}
                     {% for message in messages %}
                         <h1 class="text-center">{{message}}</h1>

@@ -15,6 +15,7 @@ def create_checkout_session():
     checkout_session = stripe.checkout.Session.create(
         line_items=items_in_cart,
         mode='payment',
+        allow_promotion_codes=True,
         success_url='http://localhost:5000/success',
         cancel_url='http://localhost:5000/cart',
         shipping_address_collection={
