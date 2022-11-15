@@ -134,6 +134,7 @@
                 </div>
             </div>
         </div>
+
         <div class="flex align-center justify-center size-chart">
             <p>Size Chart</p>
             <table class="tg">
@@ -252,8 +253,13 @@
             </div>
         </div>
     </footer>
-
+    
     <script src="{{ url_for('static', filename='/js/script.js') }}"></script>
+    <script>
+        /* Initiate Magnify Function
+        with the id of the image, and the strength of the magnifier glass:*/
+        magnify("main_image", 3);
+        </script>
     <script>updateQuantity({{colors[0].M_stock}})</script>
 </body>
 </html>

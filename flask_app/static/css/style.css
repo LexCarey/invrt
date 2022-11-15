@@ -55,7 +55,7 @@ a{
 
 .container{
     margin: 0 auto ;
-    max-width: 1000px;
+    max-width: 1100px;
     padding: 150px 5vw 200px;
 }
 
@@ -275,7 +275,7 @@ footer img{
 
 .clothing-display{
     max-width: 500px;
-    min-width: 200px;
+    min-width: 120px;
     width: 50%;
     margin-bottom: 50px;
 }
@@ -283,7 +283,7 @@ footer img{
 .clothing-display-container{
     width: 100%;
     max-height: 500px;
-    min-height: 250px;
+    max-width: 45vw;
     height: 50vw;
 }
 
@@ -305,7 +305,7 @@ footer img{
     width: 550px;
     max-width: 550px;
     max-height: 550px;
-    margin: 0px 5px;
+    margin: 5px 5px;
 }
 
 .large-photo img{
@@ -320,11 +320,9 @@ footer img{
 }
 
 .small-photos img{
-    border: solid rgb(179, 179, 179);
-    border-width: 2px;
+    border: 2px solid rgb(179, 179, 179);
     height: auto;
     cursor: pointer;
-    margin: 5px;
     width: 75px;
 }
 
@@ -449,6 +447,17 @@ footer img{
     text-align:center;
     vertical-align:middle;
 }
+
+.img-magnifier-glass {
+    position: absolute;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: crosshair;
+    /*Set the size of the magnifier glass:*/
+    width: 300px;
+    height: 300px;
+    box-shadow: 5px 5px 30px black;
+  }
 
 /* Cart */
 
@@ -587,7 +596,7 @@ footer img{
         font-size: .85em;
     }
     .clothing-display{
-        font-size: .9em;
+        font-size: 1.6vw;
     }
     .home-button{
         font-size: 4em;
@@ -602,12 +611,11 @@ footer img{
     .large-photo{
         height: 60vw;
         width: 60vw;
-        margin: 0 auto;
+        margin: 0 auto 10px;
     }
     .photos{
         display: block;
         justify-content: center;
-        padding: 0 5vw;
     }
     .small-photos{
         justify-content: space-between;
@@ -617,9 +625,6 @@ footer img{
     .small-photos img{
         height: 10vw;
         width: auto;
-    }
-    .options{
-        padding: 0 5vw;
     }
     .name-desc{
         padding-bottom: 20px;
@@ -638,7 +643,7 @@ footer img{
     }
     .size-chart{
         width: auto;
-        margin: 40px 10vw 0;
+        margin: 50px 0;
     }
     .tg{
         font-size: .7em;
@@ -691,7 +696,7 @@ footer img{
         padding-bottom: 10px;
     }
     .clothing-display{
-        font-size: .8em;
+        font-size: 2vw;
     }
     .help-div{
         display: block !important;
@@ -716,5 +721,11 @@ footer img{
     }
     .home-button{
         font-size: 3em;
+    }
+}
+
+@media (max-width: 400px){
+    .clothing-display{
+        font-size: .5em;
     }
 }
