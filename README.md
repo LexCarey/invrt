@@ -163,6 +163,7 @@ _You can check out the site here if you would like to test any features for your
 - [ ] Add support for more clothing items:
     - [ ] Hoodies
     - [ ] Hats
+- [ ] Make stock automatically drop whenever an item is purchased.
 
 See the [open issues](https://github.com/LexCarey/invrt/issues) for a full list of proposed features (and known issues).
 
