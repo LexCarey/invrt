@@ -16,7 +16,7 @@ def create_checkout_session():
         line_items=items_in_cart,
         mode='payment',
         allow_promotion_codes=True,
-        success_url='http://localhost:5000/success',
+        success_url='http://localhost:5000/success?session_id={CHECKOUT_SESSION_ID}',
         cancel_url='http://localhost:5000/cart',
         shipping_address_collection={
         'allowed_countries': ['US', 'CA'],
@@ -45,6 +45,15 @@ def create_checkout_session():
         ],
     )
     return redirect(checkout_session.url, code=303)
+
+@app.route('/success', methods=['GET'])
+def success():
+    if request.args.get('session_id'):
+        session = stripe.checkout.Session.retrieve(request.args.get('session_id'))
+        customer = stripe.Customer.retrieve(session.customer)
+        print(customer)
+        return render_template("success.html", customer = customer)
+    return redirect('/')
 
 #TEMPLATE ROUTES
 @app.route('/cart')
