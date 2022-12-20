@@ -42,3 +42,9 @@ class Color():
         mysql = connectToMySQL("invrt_schema")
         query = "SELECT * FROM colors WHERE product_id = %(product_id)s and color = %(color)s;"
         return mysql.query_db(query, data)
+
+    @classmethod
+    def lower_stock(cls, data):
+        mysql = connectToMySQL("invrt_schema")
+        query = "UPDATE colors SET " + data["size"] + "_stock = " + data["size"] + "_stock-%(quantity)s WHERE id = %(color_id)s;"
+        return mysql.query_db(query, data)

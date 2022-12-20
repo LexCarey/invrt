@@ -9,6 +9,7 @@ stripe.api_key = creds.STRIPE_SECRET_KEY
 
 @app.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
+    session['checked_out_cart'] = session['cart']
     items_in_cart = []
     for item in session['cart']:
         items_in_cart.append({'price': item["stripe_link"], 'quantity': item["quantity"]})
@@ -49,9 +50,14 @@ def create_checkout_session():
 @app.route('/success', methods=['GET'])
 def success():
     if request.args.get('session_id'):
-        session = stripe.checkout.Session.retrieve(request.args.get('session_id'))
-        customer = stripe.Customer.retrieve(session.customer)
-        print(customer)
+        stripeSession = stripe.checkout.Session.retrieve(request.args.get('session_id'))
+        customer = stripe.Customer.retrieve(stripeSession.customer)
+        for item in session['checked_out_cart']:
+            Color.lower_stock({"size": item["size"], "color_id": item["color_id"], "quantity": item["quantity"]})
+        session['cart'] = []
+        session['cart_total'] = "{:.2f}".format(0.00)
+        session['cart_id_counter'] = 0
+        session['checked_out_cart'] = []
         return render_template("success.html", customer = customer)
     return redirect('/')
 
@@ -111,7 +117,8 @@ def add_cart():
             "picture": back_preview,
             "stripe_link": color[request.form["size"] + "_link"],
             "cart_id": session['cart_id_counter'],
-            "price": product.price
+            "price": product.price,
+            "color_id": color["id"]
         })
     session['cart_id_counter'] = session['cart_id_counter'] + 1
     session["cart"]=cart_list
