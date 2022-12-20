@@ -157,7 +157,7 @@ _You can check out the site here if you would like to test any features for your
 
 - [x] Complete user checkout flow.
 - [x] Add support tabs (About, Contact, Returns, Privacy Policy)
-- [ ] Create a more inviting & interactive home page.
+- [x] Create a more inviting & interactive home page.
 - [ ] Update "Current Drop" tab to "Current Drops" tab, letting all in stock drops show up instead of just the most recent drop.
 - [ ] Show that a product is soldout on the drop tab instead of just the individual product page.
 - [ ] Add support for more clothing items:
